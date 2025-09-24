@@ -1,0 +1,11 @@
+C:\Users\abdullah\source\repos\LiveStream\LiveStream.INFRASTRUCTURE\bin\Debug\net9.0\LiveStream.INFRASTRUCTURE.deps.json
+C:\Users\abdullah\source\repos\LiveStream\LiveStream.INFRASTRUCTURE\bin\Debug\net9.0\LiveStream.INFRASTRUCTURE.dll
+C:\Users\abdullah\source\repos\LiveStream\LiveStream.INFRASTRUCTURE\bin\Debug\net9.0\LiveStream.INFRASTRUCTURE.pdb
+C:\Users\abdullah\source\repos\LiveStream\LiveStream.INFRASTRUCTURE\obj\Debug\net9.0\LiveStream.INFRASTRUCTURE.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\abdullah\source\repos\LiveStream\LiveStream.INFRASTRUCTURE\obj\Debug\net9.0\LiveStream.INFRASTRUCTURE.AssemblyInfoInputs.cache
+C:\Users\abdullah\source\repos\LiveStream\LiveStream.INFRASTRUCTURE\obj\Debug\net9.0\LiveStream.INFRASTRUCTURE.AssemblyInfo.cs
+C:\Users\abdullah\source\repos\LiveStream\LiveStream.INFRASTRUCTURE\obj\Debug\net9.0\LiveStream.INFRASTRUCTURE.csproj.CoreCompileInputs.cache
+C:\Users\abdullah\source\repos\LiveStream\LiveStream.INFRASTRUCTURE\obj\Debug\net9.0\LiveStream.INFRASTRUCTURE.dll
+C:\Users\abdullah\source\repos\LiveStream\LiveStream.INFRASTRUCTURE\obj\Debug\net9.0\refint\LiveStream.INFRASTRUCTURE.dll
+C:\Users\abdullah\source\repos\LiveStream\LiveStream.INFRASTRUCTURE\obj\Debug\net9.0\LiveStream.INFRASTRUCTURE.pdb
+C:\Users\abdullah\source\repos\LiveStream\LiveStream.INFRASTRUCTURE\obj\Debug\net9.0\ref\LiveStream.INFRASTRUCTURE.dll

@@ -1,0 +1,11 @@
+C:\Users\abdullah\source\repos\LiveStream\LiveStream.DOMAIN\bin\Debug\net9.0\LiveStream.DOMAIN.deps.json
+C:\Users\abdullah\source\repos\LiveStream\LiveStream.DOMAIN\bin\Debug\net9.0\LiveStream.DOMAIN.dll
+C:\Users\abdullah\source\repos\LiveStream\LiveStream.DOMAIN\bin\Debug\net9.0\LiveStream.DOMAIN.pdb
+C:\Users\abdullah\source\repos\LiveStream\LiveStream.DOMAIN\obj\Debug\net9.0\LiveStream.DOMAIN.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\abdullah\source\repos\LiveStream\LiveStream.DOMAIN\obj\Debug\net9.0\LiveStream.DOMAIN.AssemblyInfoInputs.cache
+C:\Users\abdullah\source\repos\LiveStream\LiveStream.DOMAIN\obj\Debug\net9.0\LiveStream.DOMAIN.AssemblyInfo.cs
+C:\Users\abdullah\source\repos\LiveStream\LiveStream.DOMAIN\obj\Debug\net9.0\LiveStream.DOMAIN.csproj.CoreCompileInputs.cache
+C:\Users\abdullah\source\repos\LiveStream\LiveStream.DOMAIN\obj\Debug\net9.0\LiveStream.DOMAIN.dll
+C:\Users\abdullah\source\repos\LiveStream\LiveStream.DOMAIN\obj\Debug\net9.0\refint\LiveStream.DOMAIN.dll
+C:\Users\abdullah\source\repos\LiveStream\LiveStream.DOMAIN\obj\Debug\net9.0\LiveStream.DOMAIN.pdb
+C:\Users\abdullah\source\repos\LiveStream\LiveStream.DOMAIN\obj\Debug\net9.0\ref\LiveStream.DOMAIN.dll

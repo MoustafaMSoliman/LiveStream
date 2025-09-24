@@ -1,0 +1,11 @@
+C:\Users\abdullah\source\repos\LiveStream\LiveStream.APPLICATION\bin\Debug\net9.0\LiveStream.APPLICATION.deps.json
+C:\Users\abdullah\source\repos\LiveStream\LiveStream.APPLICATION\bin\Debug\net9.0\LiveStream.APPLICATION.dll
+C:\Users\abdullah\source\repos\LiveStream\LiveStream.APPLICATION\bin\Debug\net9.0\LiveStream.APPLICATION.pdb
+C:\Users\abdullah\source\repos\LiveStream\LiveStream.APPLICATION\obj\Debug\net9.0\LiveStream.APPLICATION.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\abdullah\source\repos\LiveStream\LiveStream.APPLICATION\obj\Debug\net9.0\LiveStream.APPLICATION.AssemblyInfoInputs.cache
+C:\Users\abdullah\source\repos\LiveStream\LiveStream.APPLICATION\obj\Debug\net9.0\LiveStream.APPLICATION.AssemblyInfo.cs
+C:\Users\abdullah\source\repos\LiveStream\LiveStream.APPLICATION\obj\Debug\net9.0\LiveStream.APPLICATION.csproj.CoreCompileInputs.cache
+C:\Users\abdullah\source\repos\LiveStream\LiveStream.APPLICATION\obj\Debug\net9.0\LiveStream.APPLICATION.dll
+C:\Users\abdullah\source\repos\LiveStream\LiveStream.APPLICATION\obj\Debug\net9.0\refint\LiveStream.APPLICATION.dll
+C:\Users\abdullah\source\repos\LiveStream\LiveStream.APPLICATION\obj\Debug\net9.0\LiveStream.APPLICATION.pdb
+C:\Users\abdullah\source\repos\LiveStream\LiveStream.APPLICATION\obj\Debug\net9.0\ref\LiveStream.APPLICATION.dll

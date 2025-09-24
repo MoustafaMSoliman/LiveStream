@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "NaS2/ty1c1I=",
+  "success": true,
+  "projectFilePath": "D:\\WebRTC\\LiveStream\\LiveStream.API\\LiveStream.API.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\abdullah\\.nuget\\packages\\microsoft.aspnetcore.openapi\\9.0.8\\microsoft.aspnetcore.openapi.9.0.8.nupkg.sha512",
+    "C:\\Users\\abdullah\\.nuget\\packages\\microsoft.openapi\\1.6.17\\microsoft.openapi.1.6.17.nupkg.sha512"
+  ],
+  "logs": []
+}
