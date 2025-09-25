@@ -9,3 +9,15 @@ C:\Users\abdullah\source\repos\LiveStream\LiveStream.DOMAIN\obj\Debug\net9.0\Liv
 C:\Users\abdullah\source\repos\LiveStream\LiveStream.DOMAIN\obj\Debug\net9.0\refint\LiveStream.DOMAIN.dll
 C:\Users\abdullah\source\repos\LiveStream\LiveStream.DOMAIN\obj\Debug\net9.0\LiveStream.DOMAIN.pdb
 C:\Users\abdullah\source\repos\LiveStream\LiveStream.DOMAIN\obj\Debug\net9.0\ref\LiveStream.DOMAIN.dll
+D:\WebRTC\LiveStream\LiveStream.DOMAIN\bin\Debug\net9.0\LiveStream.DOMAIN.deps.json
+D:\WebRTC\LiveStream\LiveStream.DOMAIN\bin\Debug\net9.0\LiveStream.DOMAIN.dll
+D:\WebRTC\LiveStream\LiveStream.DOMAIN\bin\Debug\net9.0\LiveStream.DOMAIN.pdb
+D:\WebRTC\LiveStream\LiveStream.DOMAIN\obj\Debug\net9.0\LiveStream.DOMAIN.GeneratedMSBuildEditorConfig.editorconfig
+D:\WebRTC\LiveStream\LiveStream.DOMAIN\obj\Debug\net9.0\LiveStream.DOMAIN.AssemblyInfoInputs.cache
+D:\WebRTC\LiveStream\LiveStream.DOMAIN\obj\Debug\net9.0\LiveStream.DOMAIN.AssemblyInfo.cs
+D:\WebRTC\LiveStream\LiveStream.DOMAIN\obj\Debug\net9.0\LiveStream.DOMAIN.csproj.CoreCompileInputs.cache
+D:\WebRTC\LiveStream\LiveStream.DOMAIN\obj\Debug\net9.0\LiveStream.DOMAIN.sourcelink.json
+D:\WebRTC\LiveStream\LiveStream.DOMAIN\obj\Debug\net9.0\LiveStream.DOMAIN.dll
+D:\WebRTC\LiveStream\LiveStream.DOMAIN\obj\Debug\net9.0\refint\LiveStream.DOMAIN.dll
+D:\WebRTC\LiveStream\LiveStream.DOMAIN\obj\Debug\net9.0\LiveStream.DOMAIN.pdb
+D:\WebRTC\LiveStream\LiveStream.DOMAIN\obj\Debug\net9.0\ref\LiveStream.DOMAIN.dll

@@ -3,16 +3,40 @@
   "WorkspaceRootPath": "D:\\WebRTC\\LiveStream\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A716A146-4DB4-4A88-87D3-C76D3867EBF7}|LiveStream.INFRASTRUCTURE\\LiveStream.INFRASTRUCTURE.csproj|d:\\webrtc\\livestream\\livestream.infrastructure\\configuration\\livestreamcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A716A146-4DB4-4A88-87D3-C76D3867EBF7}|LiveStream.INFRASTRUCTURE\\LiveStream.INFRASTRUCTURE.csproj|solutionrelative:livestream.infrastructure\\configuration\\livestreamcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1C81DF0F-0AF6-4A5A-811E-CE93013D70D4}|LiveStream.API\\LiveStream.API.csproj|d:\\webrtc\\livestream\\livestream.api\\controllers\\livestreamcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1C81DF0F-0AF6-4A5A-811E-CE93013D70D4}|LiveStream.API\\LiveStream.API.csproj|solutionrelative:livestream.api\\controllers\\livestreamcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE5A1EFF-011F-40F4-838F-1DEE37A18176}|LiveStream.APPLICATION\\LiveStream.APPLICATION.csproj|d:\\webrtc\\livestream\\livestream.application\\janusservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE5A1EFF-011F-40F4-838F-1DEE37A18176}|LiveStream.APPLICATION\\LiveStream.APPLICATION.csproj|solutionrelative:livestream.application\\janusservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1C81DF0F-0AF6-4A5A-811E-CE93013D70D4}|LiveStream.API\\LiveStream.API.csproj|d:\\webrtc\\livestream\\livestream.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1C81DF0F-0AF6-4A5A-811E-CE93013D70D4}|LiveStream.API\\LiveStream.API.csproj|solutionrelative:livestream.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE5A1EFF-011F-40F4-838F-1DEE37A18176}|LiveStream.APPLICATION\\LiveStream.APPLICATION.csproj|d:\\webrtc\\livestream\\livestream.application\\camerainfodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE5A1EFF-011F-40F4-838F-1DEE37A18176}|LiveStream.APPLICATION\\LiveStream.APPLICATION.csproj|solutionrelative:livestream.application\\camerainfodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE5A1EFF-011F-40F4-838F-1DEE37A18176}|LiveStream.APPLICATION\\LiveStream.APPLICATION.csproj|d:\\webrtc\\livestream\\livestream.application\\ijanusservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE5A1EFF-011F-40F4-838F-1DEE37A18176}|LiveStream.APPLICATION\\LiveStream.APPLICATION.csproj|solutionrelative:livestream.application\\ijanusservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE5A1EFF-011F-40F4-838F-1DEE37A18176}|LiveStream.APPLICATION\\LiveStream.APPLICATION.csproj|d:\\webrtc\\livestream\\livestream.application\\createcameradto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE5A1EFF-011F-40F4-838F-1DEE37A18176}|LiveStream.APPLICATION\\LiveStream.APPLICATION.csproj|solutionrelative:livestream.application\\createcameradto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{814158B5-254D-4DA0-8450-539D752ECBE8}|LiveStream.DOMAIN\\LiveStream.DOMAIN.csproj|d:\\webrtc\\livestream\\livestream.domain\\device.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{814158B5-254D-4DA0-8450-539D752ECBE8}|LiveStream.DOMAIN\\LiveStream.DOMAIN.csproj|solutionrelative:livestream.domain\\device.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1C81DF0F-0AF6-4A5A-811E-CE93013D70D4}|LiveStream.API\\LiveStream.API.csproj|d:\\webrtc\\livestream\\livestream.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1C81DF0F-0AF6-4A5A-811E-CE93013D70D4}|LiveStream.API\\LiveStream.API.csproj|solutionrelative:livestream.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1C81DF0F-0AF6-4A5A-811E-CE93013D70D4}|LiveStream.API\\LiveStream.API.csproj|d:\\webrtc\\livestream\\livestream.api\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{1C81DF0F-0AF6-4A5A-811E-CE93013D70D4}|LiveStream.API\\LiveStream.API.csproj|solutionrelative:livestream.api\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A716A146-4DB4-4A88-87D3-C76D3867EBF7}|LiveStream.INFRASTRUCTURE\\LiveStream.INFRASTRUCTURE.csproj|d:\\webrtc\\livestream\\livestream.infrastructure\\configuration\\livestreamcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A716A146-4DB4-4A88-87D3-C76D3867EBF7}|LiveStream.INFRASTRUCTURE\\LiveStream.INFRASTRUCTURE.csproj|solutionrelative:livestream.infrastructure\\configuration\\livestreamcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,11 +46,89 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CameraInfoDto.cs",
+              "DocumentMoniker": "D:\\WebRTC\\LiveStream\\LiveStream.APPLICATION\\CameraInfoDto.cs",
+              "RelativeDocumentMoniker": "LiveStream.APPLICATION\\CameraInfoDto.cs",
+              "ToolTip": "D:\\WebRTC\\LiveStream\\LiveStream.APPLICATION\\CameraInfoDto.cs",
+              "RelativeToolTip": "LiveStream.APPLICATION\\CameraInfoDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-25T14:02:13.831Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "CreateCameraDto.cs",
+              "DocumentMoniker": "D:\\WebRTC\\LiveStream\\LiveStream.APPLICATION\\CreateCameraDto.cs",
+              "RelativeDocumentMoniker": "LiveStream.APPLICATION\\CreateCameraDto.cs",
+              "ToolTip": "D:\\WebRTC\\LiveStream\\LiveStream.APPLICATION\\CreateCameraDto.cs",
+              "RelativeToolTip": "LiveStream.APPLICATION\\CreateCameraDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-25T11:18:12.211Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "IJanusService.cs",
+              "DocumentMoniker": "D:\\WebRTC\\LiveStream\\LiveStream.APPLICATION\\IJanusService.cs",
+              "RelativeDocumentMoniker": "LiveStream.APPLICATION\\IJanusService.cs",
+              "ToolTip": "D:\\WebRTC\\LiveStream\\LiveStream.APPLICATION\\IJanusService.cs",
+              "RelativeToolTip": "LiveStream.APPLICATION\\IJanusService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-25T10:38:12.827Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "JanusService.cs",
+              "DocumentMoniker": "D:\\WebRTC\\LiveStream\\LiveStream.APPLICATION\\JanusService.cs",
+              "RelativeDocumentMoniker": "LiveStream.APPLICATION\\JanusService.cs",
+              "ToolTip": "D:\\WebRTC\\LiveStream\\LiveStream.APPLICATION\\JanusService.cs",
+              "RelativeToolTip": "LiveStream.APPLICATION\\JanusService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEsAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-25T10:37:11.631Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "D:\\WebRTC\\LiveStream\\LiveStream.API\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "LiveStream.API\\Properties\\launchSettings.json",
+              "ToolTip": "D:\\WebRTC\\LiveStream\\LiveStream.API\\Properties\\launchSettings.json",
+              "RelativeToolTip": "LiveStream.API\\Properties\\launchSettings.json",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAcAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-09-25T09:12:50.727Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "LiveStreamController.cs",
+              "DocumentMoniker": "D:\\WebRTC\\LiveStream\\LiveStream.API\\Controllers\\LiveStreamController.cs",
+              "RelativeDocumentMoniker": "LiveStream.API\\Controllers\\LiveStreamController.cs",
+              "ToolTip": "D:\\WebRTC\\LiveStream\\LiveStream.API\\Controllers\\LiveStreamController.cs",
+              "RelativeToolTip": "LiveStream.API\\Controllers\\LiveStreamController.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAswDAAAAA9AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-25T08:57:09.589Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "LiveStreamContext.cs",
               "DocumentMoniker": "D:\\WebRTC\\LiveStream\\LiveStream.INFRASTRUCTURE\\Configuration\\LiveStreamContext.cs",
               "RelativeDocumentMoniker": "LiveStream.INFRASTRUCTURE\\Configuration\\LiveStreamContext.cs",
@@ -39,7 +141,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 6,
               "Title": "Device.cs",
               "DocumentMoniker": "D:\\WebRTC\\LiveStream\\LiveStream.DOMAIN\\Device.cs",
               "RelativeDocumentMoniker": "LiveStream.DOMAIN\\Device.cs",
@@ -47,7 +149,8 @@
               "RelativeToolTip": "LiveStream.DOMAIN\\Device.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-24T11:44:56.458Z"
+              "WhenOpened": "2025-09-24T11:44:56.458Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -57,9 +160,10 @@
               "RelativeDocumentMoniker": "LiveStream.API\\Program.cs",
               "ToolTip": "D:\\WebRTC\\LiveStream\\LiveStream.API\\Program.cs",
               "RelativeToolTip": "LiveStream.API\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABUAAAAAAAAAAADwvycAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-24T11:44:32.408Z"
+              "WhenOpened": "2025-09-24T11:44:32.408Z",
+              "EditorCaption": ""
             }
           ]
         }

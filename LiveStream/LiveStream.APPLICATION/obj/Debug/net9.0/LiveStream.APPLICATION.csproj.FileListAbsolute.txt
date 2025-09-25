@@ -9,3 +9,16 @@ C:\Users\abdullah\source\repos\LiveStream\LiveStream.APPLICATION\obj\Debug\net9.
 C:\Users\abdullah\source\repos\LiveStream\LiveStream.APPLICATION\obj\Debug\net9.0\refint\LiveStream.APPLICATION.dll
 C:\Users\abdullah\source\repos\LiveStream\LiveStream.APPLICATION\obj\Debug\net9.0\LiveStream.APPLICATION.pdb
 C:\Users\abdullah\source\repos\LiveStream\LiveStream.APPLICATION\obj\Debug\net9.0\ref\LiveStream.APPLICATION.dll
+D:\WebRTC\LiveStream\LiveStream.APPLICATION\bin\Debug\net9.0\LiveStream.APPLICATION.deps.json
+D:\WebRTC\LiveStream\LiveStream.APPLICATION\bin\Debug\net9.0\LiveStream.APPLICATION.dll
+D:\WebRTC\LiveStream\LiveStream.APPLICATION\bin\Debug\net9.0\LiveStream.APPLICATION.pdb
+D:\WebRTC\LiveStream\LiveStream.APPLICATION\obj\Debug\net9.0\LiveStream.APPLICATION.csproj.AssemblyReference.cache
+D:\WebRTC\LiveStream\LiveStream.APPLICATION\obj\Debug\net9.0\LiveStream.APPLICATION.GeneratedMSBuildEditorConfig.editorconfig
+D:\WebRTC\LiveStream\LiveStream.APPLICATION\obj\Debug\net9.0\LiveStream.APPLICATION.AssemblyInfoInputs.cache
+D:\WebRTC\LiveStream\LiveStream.APPLICATION\obj\Debug\net9.0\LiveStream.APPLICATION.AssemblyInfo.cs
+D:\WebRTC\LiveStream\LiveStream.APPLICATION\obj\Debug\net9.0\LiveStream.APPLICATION.csproj.CoreCompileInputs.cache
+D:\WebRTC\LiveStream\LiveStream.APPLICATION\obj\Debug\net9.0\LiveStream.APPLICATION.sourcelink.json
+D:\WebRTC\LiveStream\LiveStream.APPLICATION\obj\Debug\net9.0\LiveStream.APPLICATION.dll
+D:\WebRTC\LiveStream\LiveStream.APPLICATION\obj\Debug\net9.0\refint\LiveStream.APPLICATION.dll
+D:\WebRTC\LiveStream\LiveStream.APPLICATION\obj\Debug\net9.0\LiveStream.APPLICATION.pdb
+D:\WebRTC\LiveStream\LiveStream.APPLICATION\obj\Debug\net9.0\ref\LiveStream.APPLICATION.dll
