@@ -13,6 +13,6 @@ export class CameraService {
   constructor(private http: HttpClient) {}
 
   getCameraInfo(cameraId: number): Observable<CameraInfo> {
-    return this.http.get<CameraInfo>(`https://localhost:7239/api/LiveStream/${cameraId}/info`);
+    return this.http.get<CameraInfo>(`http://localhost:5046/api/LiveStream/${cameraId}/info`);
   }
 }

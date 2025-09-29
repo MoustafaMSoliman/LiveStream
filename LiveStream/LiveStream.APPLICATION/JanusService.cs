@@ -38,6 +38,8 @@ public class JanusService : IJanusService
                     url = dto.RtspUrl,
                     audio = false,
                     video = true,
+                    videopt = 96,
+                    videortpmap = "H264/90000",
                     secret = "" // optional
                 }
             };
@@ -60,7 +62,7 @@ public class JanusService : IJanusService
         finally
         {
             // destroy session used for admin action
-            await DestroySessionAsync(sessionId.Value);
+            //await DestroySessionAsync(sessionId.Value);
         }
     }
 

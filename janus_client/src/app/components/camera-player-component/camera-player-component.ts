@@ -18,11 +18,17 @@ export class CameraPlayerComponent implements OnInit, OnDestroy {
 
   constructor(private cameraService: CameraService) {}
 
-  ngOnInit(): void {
-    if (!this.cameraId) { this.status = 'No cameraId'; return; }
-    // init Janus (optional debug)
-    Janus.init({debug: false, callback: () => this.start()});
+ ngOnInit(): void {
+  
+  this.cameraId = 20;
+
+  if (!this.cameraId) { 
+    this.status = 'No cameraId'; 
+    return; 
   }
+
+  Janus.init({debug: false, callback: () => this.start()});
+}
 
   private async start() {
     this.status = 'Requesting camera info...';
@@ -42,45 +48,68 @@ export class CameraPlayerComponent implements OnInit, OnDestroy {
 
   private attachToStreaming(info: { janusWs: string, mountId: number }) {
     this.janus.attach({
-      plugin: "janus.plugin.streaming",
-      success: (pluginHandle: any) => {
-        this.pluginHandle = pluginHandle;
-        this.status = 'Attached to streaming plugin, watching...';
-        const body = { request: "watch", id: info.mountId };
-        this.pluginHandle.send({ message: body });
-      },
-      error: (err: any) => { console.error("attach error", err); this.status = 'Attach error'; },
-      onmessage: (msg: any, jsep: any) => {
-        // handle Janus messages
-        // Important: when Janus replies with a jsep (offer), create answer
-        if (jsep) {
-          this.pluginHandle.createAnswer({
-            jsep: jsep,
-            media: { audioSend: false, videoSend: false }, // viewer only
-            success: (jsepAnswer: any) => {
-              this.pluginHandle.send({ message: { request: "start" }, jsep: jsepAnswer });
-            },
-            error: (err: any) => {
-              console.error("createAnswer error", err);
-              this.status = 'WebRTC error';
-            }
-          });
-        } else {
-          // other plugin messages: e.g., "slow link", "starting", etc.
-          console.log("plugin msg", msg);
+  plugin: "janus.plugin.streaming",
+  success: (pluginHandle: any) => {
+    this.pluginHandle = pluginHandle;
+    this.status = 'Attached to streaming plugin, watching...';
+
+    const body = { request: "watch", id: info.mountId };
+    this.pluginHandle.send({ message: body });
+  },
+  error: (err: any) => {
+    console.error("attach error", err);
+    this.status = 'Attach error';
+  },
+  onmessage: (msg: any, jsep: any) => {
+    if (jsep) {
+      this.pluginHandle.createAnswer({
+        jsep: jsep,
+        media: { audioSend: false, videoSend: false, audioRecv: false, videoRecv:true }, // viewer only
+        success: (jsepAnswer: any) => {
+          this.pluginHandle.send({ message: { request: "start" }, jsep: jsepAnswer });
+        },
+        error: (err: any) => {
+          console.error("createAnswer error", err);
+          this.status = 'WebRTC error';
         }
-      },
-      onremotestream: (stream: MediaStream) => {
-        // janus.js provides onremotestream with the MediaStream
-        const videoEl = this.videoRef.nativeElement;
-        videoEl.srcObject = stream;
-        videoEl.play().catch(()=>{});
-        this.status = '';
-      },
-      oncleanup: () => {
-        this.status = 'Cleaned up';
-      }
-    });
+      });
+    }
+  },
+
+  onlocaltrack: (track: MediaStreamTrack, on: boolean) => {
+    if (!on) return;
+    console.log("Local track:", track);
+  },
+ onremotetrack: (track: MediaStreamTrack, mid: string, on: boolean) => {
+  if (!on) return;
+
+  const videoEl = this.videoRef.nativeElement as HTMLVideoElement;
+  let stream = videoEl.srcObject as MediaStream;
+
+  if (!stream) {
+    stream = new MediaStream();
+    videoEl.srcObject = stream;
+  }
+
+  if (
+    track.kind === "video" &&
+    !stream.getTracks().some(t => t.id === track.id)
+  ) {
+    console.log("Adding remote video track:", track);
+    stream.addTrack(track);
+  }
+
+  videoEl.onloadedmetadata = () => {
+    videoEl.play().catch(err => console.warn("Autoplay blocked:", err));
+  };
+},
+
+
+  oncleanup: () => {
+    this.status = 'Cleaned up';
+  }
+});
+
   }
 
   ngOnDestroy(): void {

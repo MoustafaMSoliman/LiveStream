@@ -21,7 +21,7 @@ namespace LiveStream.API.Controllers
             
             return new CameraInfoDto
             ("ws://localhost:8188/janus", // Janus WebSocket server
-               1 // الـ stream mountpoint اللي عايزين نتفرج عليه
+               20 // الـ stream mountpoint اللي عايزين نتفرج عليه
             );
         }
         [HttpPost("create-rtsp")]
