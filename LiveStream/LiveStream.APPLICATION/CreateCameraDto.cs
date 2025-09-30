@@ -3,5 +3,7 @@
 public record CreateCameraDto(
     int? Id,         
     string Name,     
-    string RtspUrl  
+    string RtspUrl,
+    bool Video,
+    bool Audio
 );

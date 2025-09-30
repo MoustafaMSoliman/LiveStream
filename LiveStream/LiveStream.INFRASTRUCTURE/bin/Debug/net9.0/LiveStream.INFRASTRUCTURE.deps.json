@@ -11,7 +11,8 @@
           "LiveStream.APPLICATION": "1.0.0",
           "LiveStream.DOMAIN": "1.0.0",
           "Microsoft.EntityFrameworkCore": "9.0.9",
-          "Microsoft.EntityFrameworkCore.SqlServer": "9.0.9"
+          "Microsoft.EntityFrameworkCore.SqlServer": "9.0.9",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.9"
         },
         "runtime": {
           "LiveStream.INFRASTRUCTURE.dll": {}
@@ -671,6 +672,8 @@
       },
       "LiveStream.APPLICATION/1.0.0": {
         "dependencies": {
+          "LiveStream.DOMAIN": "1.0.0",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.9",
           "Microsoft.Extensions.Http": "9.0.9"
         },
         "runtime": {

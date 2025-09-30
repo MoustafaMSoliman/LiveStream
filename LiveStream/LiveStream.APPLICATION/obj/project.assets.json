@@ -258,6 +258,16 @@
         "build": {
           "buildTransitive/net8.0/_._": {}
         }
+      },
+      "LiveStream.DOMAIN/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "compile": {
+          "bin/placeholder/LiveStream.DOMAIN.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/LiveStream.DOMAIN.dll": {}
+        }
       }
     }
   },
@@ -700,31 +710,38 @@
         "microsoft.extensions.primitives.nuspec",
         "useSharedDesignerContext.txt"
       ]
+    },
+    "LiveStream.DOMAIN/1.0.0": {
+      "type": "project",
+      "path": "../LiveStream.DOMAIN/LiveStream.DOMAIN.csproj",
+      "msbuildProject": "../LiveStream.DOMAIN/LiveStream.DOMAIN.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net9.0": [
+      "LiveStream.DOMAIN >= 1.0.0",
+      "Microsoft.Extensions.DependencyInjection.Abstractions >= 9.0.9",
       "Microsoft.Extensions.Http >= 9.0.9"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\abdullah\\.nuget\\packages\\": {},
+    "C:\\Users\\Moustafa\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\WebRTC\\LiveStream\\LiveStream.APPLICATION\\LiveStream.APPLICATION.csproj",
+      "projectUniqueName": "D:\\3i-vision\\LiveStream\\LiveStream\\LiveStream.APPLICATION\\LiveStream.APPLICATION.csproj",
       "projectName": "LiveStream.APPLICATION",
-      "projectPath": "D:\\WebRTC\\LiveStream\\LiveStream.APPLICATION\\LiveStream.APPLICATION.csproj",
-      "packagesPath": "C:\\Users\\abdullah\\.nuget\\packages\\",
-      "outputPath": "D:\\WebRTC\\LiveStream\\LiveStream.APPLICATION\\obj\\",
+      "projectPath": "D:\\3i-vision\\LiveStream\\LiveStream\\LiveStream.APPLICATION\\LiveStream.APPLICATION.csproj",
+      "packagesPath": "C:\\Users\\Moustafa\\.nuget\\packages\\",
+      "outputPath": "D:\\3i-vision\\LiveStream\\LiveStream\\LiveStream.APPLICATION\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\abdullah\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Moustafa\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -733,12 +750,17 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net9.0": {
           "targetAlias": "net9.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "D:\\3i-vision\\LiveStream\\LiveStream\\LiveStream.DOMAIN\\LiveStream.DOMAIN.csproj": {
+              "projectPath": "D:\\3i-vision\\LiveStream\\LiveStream\\LiveStream.DOMAIN\\LiveStream.DOMAIN.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
@@ -757,6 +779,10 @@
       "net9.0": {
         "targetAlias": "net9.0",
         "dependencies": {
+          "Microsoft.Extensions.DependencyInjection.Abstractions": {
+            "target": "Package",
+            "version": "[9.0.9, )"
+          },
           "Microsoft.Extensions.Http": {
             "target": "Package",
             "version": "[9.0.9, )"
@@ -778,7 +804,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

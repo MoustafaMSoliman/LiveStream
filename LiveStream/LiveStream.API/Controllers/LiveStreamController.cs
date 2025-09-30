@@ -1,4 +1,5 @@
 ﻿using LiveStream.APPLICATION;
+using LiveStream.APPLICATION.Interfaces;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 

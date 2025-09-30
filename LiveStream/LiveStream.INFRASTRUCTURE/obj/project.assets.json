@@ -1120,6 +1120,8 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v9.0",
         "dependencies": {
+          "LiveStream.DOMAIN": "1.0.0",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.9",
           "Microsoft.Extensions.Http": "9.0.9"
         },
         "compile": {
@@ -3082,27 +3084,28 @@
       "LiveStream.APPLICATION >= 1.0.0",
       "LiveStream.DOMAIN >= 1.0.0",
       "Microsoft.EntityFrameworkCore >= 9.0.9",
-      "Microsoft.EntityFrameworkCore.SqlServer >= 9.0.9"
+      "Microsoft.EntityFrameworkCore.SqlServer >= 9.0.9",
+      "Microsoft.Extensions.DependencyInjection.Abstractions >= 9.0.9"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\abdullah\\.nuget\\packages\\": {},
+    "C:\\Users\\Moustafa\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\WebRTC\\LiveStream\\LiveStream.INFRASTRUCTURE\\LiveStream.INFRASTRUCTURE.csproj",
+      "projectUniqueName": "D:\\3i-vision\\LiveStream\\LiveStream\\LiveStream.INFRASTRUCTURE\\LiveStream.INFRASTRUCTURE.csproj",
       "projectName": "LiveStream.INFRASTRUCTURE",
-      "projectPath": "D:\\WebRTC\\LiveStream\\LiveStream.INFRASTRUCTURE\\LiveStream.INFRASTRUCTURE.csproj",
-      "packagesPath": "C:\\Users\\abdullah\\.nuget\\packages\\",
-      "outputPath": "D:\\WebRTC\\LiveStream\\LiveStream.INFRASTRUCTURE\\obj\\",
+      "projectPath": "D:\\3i-vision\\LiveStream\\LiveStream\\LiveStream.INFRASTRUCTURE\\LiveStream.INFRASTRUCTURE.csproj",
+      "packagesPath": "C:\\Users\\Moustafa\\.nuget\\packages\\",
+      "outputPath": "D:\\3i-vision\\LiveStream\\LiveStream\\LiveStream.INFRASTRUCTURE\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\abdullah\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Moustafa\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -3111,17 +3114,18 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net9.0": {
           "targetAlias": "net9.0",
           "projectReferences": {
-            "D:\\WebRTC\\LiveStream\\LiveStream.APPLICATION\\LiveStream.APPLICATION.csproj": {
-              "projectPath": "D:\\WebRTC\\LiveStream\\LiveStream.APPLICATION\\LiveStream.APPLICATION.csproj"
+            "D:\\3i-vision\\LiveStream\\LiveStream\\LiveStream.APPLICATION\\LiveStream.APPLICATION.csproj": {
+              "projectPath": "D:\\3i-vision\\LiveStream\\LiveStream\\LiveStream.APPLICATION\\LiveStream.APPLICATION.csproj"
             },
-            "D:\\WebRTC\\LiveStream\\LiveStream.DOMAIN\\LiveStream.DOMAIN.csproj": {
-              "projectPath": "D:\\WebRTC\\LiveStream\\LiveStream.DOMAIN\\LiveStream.DOMAIN.csproj"
+            "D:\\3i-vision\\LiveStream\\LiveStream\\LiveStream.DOMAIN\\LiveStream.DOMAIN.csproj": {
+              "projectPath": "D:\\3i-vision\\LiveStream\\LiveStream\\LiveStream.DOMAIN\\LiveStream.DOMAIN.csproj"
             }
           }
         }
@@ -3149,6 +3153,10 @@
           "Microsoft.EntityFrameworkCore.SqlServer": {
             "target": "Package",
             "version": "[9.0.9, )"
+          },
+          "Microsoft.Extensions.DependencyInjection.Abstractions": {
+            "target": "Package",
+            "version": "[9.0.9, )"
           }
         },
         "imports": [
@@ -3167,7 +3175,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

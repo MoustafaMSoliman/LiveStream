@@ -1,4 +1,4 @@
-﻿namespace LiveStream.APPLICATION;
+﻿namespace LiveStream.APPLICATION.Interfaces;
 
 public interface IJanusService
 {

@@ -1,11 +1,41 @@
-<div *ngIf="status" class="status">{{ status }}</div>
-<br/>
-<br/>
-<br/>
-<div class="player">
+<div class="camera-container">
+      <!-- حالة النظام -->
+      <div class="status-bar">
+        <div [class]="getStatusClass()">{{ status }}</div>
+        <div *ngIf="currentDevice" class="device-info">
+          جهاز: {{ currentDevice.name }} | مشاهدون: {{ currentDevice.viewerCount }}
+        </div>
+      </div>
 
+      <!-- قائمة الأجهزة -->
+      <div class="devices-panel" *ngIf="showDevicesPanel">
+        <h3>الأجهزة المتاحة</h3>
+        <div *ngFor="let device of accessibleDevices" 
+             class="device-item"
+             [class.selected]="device.id === selectedDeviceId"
+             (click)="selectDevice(device)">
+          <div class="device-name">{{ device.name }}</div>
+          <div class="device-status" [class.online]="device.isOnline">
+            {{ device.isOnline ? '🟢 متصل' : '🔴 غير متصل' }}
+          </div>
+          <div class="device-location">{{ device.location }}</div>
+        </div>
+      </div>
 
-<video #video autoplay playsinline muted controls>
-  
-</video>
-</div>
+      <!-- مشغل الفيديو -->
+      <div class="video-container">
+        <video #videoElement 
+               class="video-player"
+               playsinline 
+               muted 
+               controls
+               (click)="togglePlay()">
+          المتصفح لا يدعم تشغيل الفيديو.
+        </video>
+        
+        <!-- زر التشغيل -->
+        <div *ngIf="showPlayButton" class="play-overlay" (click)="playVideo()">
+          <button class="play-button">▶ تشغيل البث المباشر</button>
+        </div>
+      </div>
+    </div>

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("LiveStream.INFRASTRUCTURE")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ee4a3c5c5b367984122b7b222e1a722d96293128")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7deaa203a4e15288b9cf0f60faa9071909cac473")]
 [assembly: System.Reflection.AssemblyProductAttribute("LiveStream.INFRASTRUCTURE")]
 [assembly: System.Reflection.AssemblyTitleAttribute("LiveStream.INFRASTRUCTURE")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
