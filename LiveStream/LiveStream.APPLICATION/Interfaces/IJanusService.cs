@@ -9,4 +9,5 @@ public interface IJanusService
     Task<long> AttachToStreamingAsync(long sessionId);
     Task<bool> CreateCameraAsync(long sessionId, long handleId, int cameraId, string description, int port);
     Task<int?> CreateRtspMountpointAsync(CreateCameraDto dto);
+    Task<string?> ListMountPointsAsync(long sessionId, long handleId);
 }

@@ -11,53 +11,53 @@ var builder = WebApplication.CreateBuilder(args);
 // Add SignalR
 builder.Services.AddSignalR();
 
-// Add Authentication
-builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-    .AddJwtBearer(options =>
-    {
-        options.TokenValidationParameters = new TokenValidationParameters
-        {
-            ValidateIssuerSigningKey = true,
-            // Use a proper secret key from configuration
-            IssuerSigningKey = new SymmetricSecurityKey(
-                Encoding.UTF8.GetBytes(builder.Configuration["Jwt:SecretKey"] ??
-                throw new ArgumentNullException("Jwt:SecretKey"))),
-            ValidateIssuer = true,
-            ValidateAudience = true,
-            ValidIssuer = builder.Configuration["Jwt:Issuer"],
-            ValidAudience = builder.Configuration["Jwt:Audience"],
-            ClockSkew = TimeSpan.Zero
-        };
+//// Add Authentication
+//builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+//    .AddJwtBearer(options =>
+//    {
+//        options.TokenValidationParameters = new TokenValidationParameters
+//        {
+//            ValidateIssuerSigningKey = true,
+//            // Use a proper secret key from configuration
+//            IssuerSigningKey = new SymmetricSecurityKey(
+//                Encoding.UTF8.GetBytes(builder.Configuration["Jwt:SecretKey"] ??
+//                throw new ArgumentNullException("Jwt:SecretKey"))),
+//            ValidateIssuer = true,
+//            ValidateAudience = true,
+//            ValidIssuer = builder.Configuration["Jwt:Issuer"],
+//            ValidAudience = builder.Configuration["Jwt:Audience"],
+//            ClockSkew = TimeSpan.Zero
+//        };
 
-        // SignalR JWT support for WebSockets
-        options.Events = new JwtBearerEvents
-        {
-            OnMessageReceived = context =>
-            {
-                var accessToken = context.Request.Query["access_token"];
-                var path = context.Request.Path;
+//        // SignalR JWT support for WebSockets
+//        options.Events = new JwtBearerEvents
+//        {
+//            OnMessageReceived = context =>
+//            {
+//                var accessToken = context.Request.Query["access_token"];
+//                var path = context.Request.Path;
 
-                if (!string.IsNullOrEmpty(accessToken) && path.StartsWithSegments("/streamhub"))
-                {
-                    context.Token = accessToken;
-                }
-                return Task.CompletedTask;
-            }
-        };
-    });
+//                if (!string.IsNullOrEmpty(accessToken) && path.StartsWithSegments("/streamhub"))
+//                {
+//                    context.Token = accessToken;
+//                }
+//                return Task.CompletedTask;
+//            }
+//        };
+//    });
 
-// Add Authorization
-builder.Services.AddAuthorization(options =>
-{
-    options.AddPolicy("DeviceAccess", policy =>
-        policy.RequireAuthenticatedUser());
+//// Add Authorization
+//builder.Services.AddAuthorization(options =>
+//{
+//    options.AddPolicy("DeviceAccess", policy =>
+//        policy.RequireAuthenticatedUser());
 
-    options.AddPolicy("AdminOnly", policy =>
-        policy.RequireRole("Admin"));
+//    options.AddPolicy("AdminOnly", policy =>
+//        policy.RequireRole("Admin"));
 
-    options.AddPolicy("ReporterOrAbove", policy =>
-        policy.RequireRole("Admin", "Reporter"));
-});
+//    options.AddPolicy("ReporterOrAbove", policy =>
+//        policy.RequireRole("Admin", "Reporter"));
+//});
 
 
 
@@ -66,7 +66,7 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("SignalRPolicy", policy =>
     {
-        policy.WithOrigins("http://localhost:4200")
+        policy.WithOrigins("http://localhost:4200", "https://localhost:4200")
               .AllowAnyHeader()
               .AllowAnyMethod()
               .AllowCredentials();
@@ -95,10 +95,10 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 app.UseCors("SignalRPolicy");
-app.UseHttpsRedirection();
+//app.UseHttpsRedirection();
 
-app.UseAuthentication();
-app.UseAuthorization();
+//app.UseAuthentication();
+//app.UseAuthorization();
 
 
 app.MapControllers();

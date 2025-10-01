@@ -33,3 +33,15 @@ D:\3i-vision\LiveStream\LiveStream\LiveStream.DOMAIN\obj\Debug\net9.0\LiveStream
 D:\3i-vision\LiveStream\LiveStream\LiveStream.DOMAIN\obj\Debug\net9.0\refint\LiveStream.DOMAIN.dll
 D:\3i-vision\LiveStream\LiveStream\LiveStream.DOMAIN\obj\Debug\net9.0\LiveStream.DOMAIN.pdb
 D:\3i-vision\LiveStream\LiveStream\LiveStream.DOMAIN\obj\Debug\net9.0\ref\LiveStream.DOMAIN.dll
+D:\LiveStream\LiveStream\LiveStream.DOMAIN\bin\Debug\net9.0\LiveStream.DOMAIN.deps.json
+D:\LiveStream\LiveStream\LiveStream.DOMAIN\bin\Debug\net9.0\LiveStream.DOMAIN.dll
+D:\LiveStream\LiveStream\LiveStream.DOMAIN\bin\Debug\net9.0\LiveStream.DOMAIN.pdb
+D:\LiveStream\LiveStream\LiveStream.DOMAIN\obj\Debug\net9.0\LiveStream.DOMAIN.GeneratedMSBuildEditorConfig.editorconfig
+D:\LiveStream\LiveStream\LiveStream.DOMAIN\obj\Debug\net9.0\LiveStream.DOMAIN.AssemblyInfoInputs.cache
+D:\LiveStream\LiveStream\LiveStream.DOMAIN\obj\Debug\net9.0\LiveStream.DOMAIN.AssemblyInfo.cs
+D:\LiveStream\LiveStream\LiveStream.DOMAIN\obj\Debug\net9.0\LiveStream.DOMAIN.csproj.CoreCompileInputs.cache
+D:\LiveStream\LiveStream\LiveStream.DOMAIN\obj\Debug\net9.0\LiveStream.DOMAIN.sourcelink.json
+D:\LiveStream\LiveStream\LiveStream.DOMAIN\obj\Debug\net9.0\LiveStream.DOMAIN.dll
+D:\LiveStream\LiveStream\LiveStream.DOMAIN\obj\Debug\net9.0\refint\LiveStream.DOMAIN.dll
+D:\LiveStream\LiveStream\LiveStream.DOMAIN\obj\Debug\net9.0\LiveStream.DOMAIN.pdb
+D:\LiveStream\LiveStream\LiveStream.DOMAIN\obj\Debug\net9.0\ref\LiveStream.DOMAIN.dll

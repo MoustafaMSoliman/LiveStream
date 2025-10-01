@@ -9,6 +9,6 @@ public interface IDeviceRepository
     Task<List<Device>> GetDevicesByOwnerAsync(int ownerId);
     Task<List<Device>> GetDevicesByIdsAsync(List<int> deviceIds);
     Task<List<Device>> GetDevicesByOwnerOrReportersAsync(int ownerId, List<int> reporterDeviceIds);
-    Task<CameraInfoDto?> GetCameraInfoAsync(int deviceId);
+    
     Task UpdateDeviceAsync(Device device);
 }

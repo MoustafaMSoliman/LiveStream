@@ -16,7 +16,7 @@ export class CameraPlayerComponent implements OnInit, OnDestroy {
   accessibleDevices: any[] = [];
   selectedDeviceId: number | null = null;
   currentDevice: any = null;
-  status = 'جاري التهيئة...';
+  status = 'Preparing...';
   showPlayButton = false;
   isConnected = false;
   showDevicesPanel: boolean = true;
@@ -31,65 +31,62 @@ export class CameraPlayerComponent implements OnInit, OnDestroy {
   ) {}
 
   async ngOnInit(): Promise<void> {
-    // بدء اتصال SignalR
+
     const connected = await this.streamService.startConnection();
     if (!connected) {
-      this.status = 'فشل الاتصال بالخادم';
+      this.status = 'Failed to connect to the server';
       return;
     }
 
-    // تحميل الأجهزة المتاحة
+
     await this.loadAccessibleDevices();
     
-    // بدء إرسال النبض
+
     this.startHeartbeat();
     
-    this.status = 'اختر جهازاً للعرض';
+    this.status = 'Select device to show stream';
   }
 
   private async loadAccessibleDevices(): Promise<void> {
     const result = await this.streamService.getMyDevices();
     if (result.success) {
       this.accessibleDevices = result.data!;
-      this.status = `تم تحميل ${this.accessibleDevices.length} جهاز`;
+      this.status = `Loaded device ${this.accessibleDevices.length}`;
     } else {
-      this.status = `فشل تحميل الأجهزة: ${result.error}`;
+      this.status = `  Load devices failed: ${result.error}`;
     }
   }
 
   async selectDevice(device: any): Promise<void> {
     if (!device.isOnline || !device.canView) {
-      this.status = 'لا يمكن عرض هذا الجهاز';
+      this.status = 'This device can not be shown';
       return;
     }
 
     this.selectedDeviceId = device.id;
     this.currentDevice = device;
-    this.status = 'جاري الاتصال بالبث...';
+    this.status = 'Stream connecting...';
 
     try {
-      // 1. طلب معلومات الإشارة من خلال SignalR
       const signalingResult = await this.streamService.requestSignalingInfo(device.id);
       
       if (!signalingResult.success) {
-        this.status = `خطأ في الصلاحيات: ${signalingResult.error}`;
+        this.status = `Permissions wrong  : ${signalingResult.error}`;
         return;
       }
 
-      // 2. بدء الجلسة مع Janus
       const watchResult = await this.streamService.startWatching(device.id);
       if (!watchResult.success) {
-        this.status = `فشل بدء المشاهدة: ${watchResult.error}`;
+        this.status = `Start watching failed  : ${watchResult.error}`;
         return;
       }
 
       this.streamSessionId = watchResult.data!;
 
-      // 3. تهيئة Janus مع معلومات الإشارة
       await this.initializeJanus(signalingResult.data!);
 
     } catch (error) {
-      this.status = `خطأ في الاتصال: ${error}`;
+      this.status = `Connection failure  : ${error}`;
       console.error('Device selection error:', error);
     }
   }
@@ -103,16 +100,16 @@ export class CameraPlayerComponent implements OnInit, OnDestroy {
           iceServers: signalingInfo.iceServers,
           success: () => {
             this.isConnected = true;
-            this.status = 'جاري تشغيل البث...';
+            this.status = 'Plaing Stream...';
             this.attachToStreaming(signalingInfo.mountpointId);
           },
           error: (error: any) => {
-            this.status = `فشل الاتصال بـ Janus: ${error.message}`;
+            this.status = `Janus connection failure: ${error.message}`;
             console.error('Janus connection error:', error);
           },
           destroyed: () => {
             this.isConnected = false;
-            this.status = 'تم إغلاق الاتصال';
+            this.status = 'Connection is closed';
           }
         });
       }

@@ -3,20 +3,20 @@
       <div class="status-bar">
         <div [class]="getStatusClass()">{{ status }}</div>
         <div *ngIf="currentDevice" class="device-info">
-          جهاز: {{ currentDevice.name }} | مشاهدون: {{ currentDevice.viewerCount }}
+          Device: {{ currentDevice.name }} | Viewers: {{ currentDevice.viewerCount }}
         </div>
       </div>
 
       <!-- قائمة الأجهزة -->
       <div class="devices-panel" *ngIf="showDevicesPanel">
-        <h3>الأجهزة المتاحة</h3>
+        <h3>Available Devices</h3>
         <div *ngFor="let device of accessibleDevices" 
              class="device-item"
              [class.selected]="device.id === selectedDeviceId"
              (click)="selectDevice(device)">
           <div class="device-name">{{ device.name }}</div>
           <div class="device-status" [class.online]="device.isOnline">
-            {{ device.isOnline ? '🟢 متصل' : '🔴 غير متصل' }}
+            {{ device.isOnline ? '🟢 Connected' : '🔴  Not Connected' }}
           </div>
           <div class="device-location">{{ device.location }}</div>
         </div>
@@ -30,12 +30,12 @@
                muted 
                controls
                (click)="togglePlay()">
-          المتصفح لا يدعم تشغيل الفيديو.
+          Browser doesn't support this video
         </video>
         
         <!-- زر التشغيل -->
         <div *ngIf="showPlayButton" class="play-overlay" (click)="playVideo()">
-          <button class="play-button">▶ تشغيل البث المباشر</button>
+          <button class="play-button">▶ Stream Play</button>
         </div>
       </div>
     </div>

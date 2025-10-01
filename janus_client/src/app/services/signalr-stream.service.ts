@@ -47,63 +47,72 @@ export class SignalrStreamService {
   }
 
   private initializeConnection(): void {
-    // إنشاء اتصال SignalR مع إعدادات المصادقة
+    
     this.hubConnection = new signalR.HubConnectionBuilder()
-      .withUrl('https://localhost:7239/streamhub', {
-        accessTokenFactory: () => this.getAccessToken(),
-        withCredentials: true // مهم للمصادقة بـ Cookies
-      })
-      .withAutomaticReconnect({
-        nextRetryDelayInMilliseconds: (retryContext: { previousRetryCount: number; }) => {
+      .withUrl('https://localhost:7239/streamhub'
+        //, {
+        //accessTokenFactory: () => this.getAccessToken(),
+       // withCredentials: true // مهم للمصادقة بـ Cookies
+      //}
+    )
+      .withAutomaticReconnect(
+       // {
+        //nextRetryDelayInMilliseconds: (retryContext: { previousRetryCount: number; }) => {
           // إعادة الاتصال بعد 1, 2, 4, 8, 16, 32 ثانية ثم كل 32 ثانية
-          return Math.min(32000, 1000 * Math.pow(2, retryContext.previousRetryCount));
-        }
-      })
+         // return Math.min(32000, 1000 * Math.pow(2, retryContext.previousRetryCount));
+       // }
+      //}
+    )
       .configureLogging(signalR.LogLevel.Warning)
       .build();
 
     this.registerHubEvents();
   }
-
+/*
   private getAccessToken(): string {
-    // استرجع الـ JWT token من خدمة المصادقة
+   
     const token = localStorage.getItem('access_token');
-    // تأكد من إزالة البادئة "Bearer " إذا كانت موجودة :cite[2]
+    
     return token ? token.replace('Bearer ', '') : '';
   }
-
+*/
   private registerHubEvents(): void {
-    // الاستماع للأجهزة المتاحة
-    this.hubConnection.on('AccessibleDevices', (devices: DeviceInfo[]) => {
-      this.accessibleDevices.next(devices);
+    this.hubConnection.on('accessibleDevices', (devices: DeviceInfo[]) => {
+        this.accessibleDevices.next(devices);
     });
 
-    // الاستماع للإشعارات
-    this.hubConnection.on('ViewerNotification', (notification: any) => {
-      console.log('إشعار:', notification);
+    this.hubConnection.on('viewerNotification', (notification: any) => {
+        console.log('إشعار:', notification);
     });
 
-    // تتبع حالة الاتصال
+    // إضافة استماع لـ heartbeatack
+    this.hubConnection.on('heartbeatack', (response: any) => {
+        console.log('✅ Signal approved ', response);
+    });
+
+    this.hubConnection.on('testEvent', (data) => {
+        console.log('✅ Received event:', data);
+    });
     this.hubConnection.onreconnected(() => {
-      console.log('تم إعادة الاتصال بـ SignalR');
-      this.connectionState.next(true);
+        console.log('SignalR reconnect');
+        this.connectionState.next(true);
     });
 
     this.hubConnection.onclose(() => {
-      console.log('تم إغلاق اتصال SignalR');
-      this.connectionState.next(false);
+        console.log('SignalR disconnect');
+        this.connectionState.next(false);
     });
-  }
+}
 
   // بدء الاتصال بـ SignalR
   public async startConnection(): Promise<boolean> {
     try {
       await this.hubConnection.start();
       this.connectionState.next(true);
-      console.log('✅ تم الاتصال بـ SignalR بنجاح');
+      console.log('✅ Successful connected to SignalR');
       return true;
     } catch (err) {
-      console.error('❌ فشل الاتصال بـ SignalR:', err);
+      console.error('❌ Failed to connect to SignalR:', err);
       this.connectionState.next(false);
       return false;
     }
@@ -167,7 +176,7 @@ export class SignalrStreamService {
       try {
         await this.hubConnection.invoke('Heartbeat');
       } catch (error) {
-        console.warn('فشل في إرسال النبض:', error);
+        console.warn('Failed to send signal: ', error);
       }
     }
   }

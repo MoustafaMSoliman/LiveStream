@@ -140,7 +140,20 @@ public class JanusService : IJanusService
 
         return response.IsSuccessStatusCode;
     }
+    public async Task<string?> ListMountPointsAsync(long sessionId, long handleId)
+    {
+        var body = new
+        {
+            janus = "message",
+            transaction = Guid.NewGuid().ToString(),
+            body = new { request = "list" }
+        };
 
-   
+        var resp = await _http.PostAsJsonAsync($"{sessionId}/{handleId}", body);
+        var responseText = await resp.Content.ReadAsStringAsync();
+        return responseText;
+    }
+
+
 }
 

@@ -49,5 +49,26 @@ namespace LiveStream.API.Controllers
             if (!ok) return BadRequest("Failed to create RTP camera");
             return Ok(new { cameraId = id, sessionId= session });
         }
+        [HttpGet("list-mountpoints")]
+        public async Task<IActionResult> ListMountpoints()
+        {
+            var sessionId = await _janus.CreateSessionAsync();
+            if (sessionId == null) return BadRequest();
+
+            try
+            {
+                var handleId = await _janus.AttachPluginAsync(sessionId.Value, "janus.plugin.streaming");
+                if (handleId is null) return BadRequest();
+                var response = await _janus.ListMountPointsAsync(sessionId.Value, handleId.Value);
+
+
+                return Ok(response);
+            }
+            finally
+            {
+                await _janus.DestroySessionAsync(sessionId.Value);
+            }
+        }
+
     }
 }
