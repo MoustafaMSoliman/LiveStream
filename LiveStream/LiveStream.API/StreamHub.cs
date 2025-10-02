@@ -7,7 +7,6 @@ using Microsoft.AspNetCore.SignalR;
 using System.Collections.Concurrent;
 using IAuthorizationService = LiveStream.APPLICATION.Interfaces.IAuthorizationService;
 
-using Microsoft.AspNetCore.SignalR;
 
 
 namespace LiveStream.API;

@@ -27,7 +27,7 @@ public class DeviceRepository : IDeviceRepository
             Name = "Parking Camera",
             Description = "كاميرا مراقبة لموقف السيارات",
             OwnerId = 1,
-            RtspUrl = "https://webrtc.github.io/samples/src/video/chrome.mp4",
+            RtspUrl = "rtsp://170.93.143.139/rtplive/470011e600ef003a004ee33696235daa",
             IsOnline = true,
             ReporterIds = new List<int> { 2 },
             CreatedAt = DateTime.UtcNow.AddDays(-45),

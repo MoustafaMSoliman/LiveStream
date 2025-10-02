@@ -1,0 +1,105 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\LiveStream\\LiveStream\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A716A146-4DB4-4A88-87D3-C76D3867EBF7}|LiveStream.INFRASTRUCTURE\\LiveStream.INFRASTRUCTURE.csproj|d:\\livestream\\livestream\\livestream.infrastructure\\repositories\\devicerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A716A146-4DB4-4A88-87D3-C76D3867EBF7}|LiveStream.INFRASTRUCTURE\\LiveStream.INFRASTRUCTURE.csproj|solutionrelative:livestream.infrastructure\\repositories\\devicerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE5A1EFF-011F-40F4-838F-1DEE37A18176}|LiveStream.APPLICATION\\LiveStream.APPLICATION.csproj|d:\\livestream\\livestream\\livestream.application\\janusservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE5A1EFF-011F-40F4-838F-1DEE37A18176}|LiveStream.APPLICATION\\LiveStream.APPLICATION.csproj|solutionrelative:livestream.application\\janusservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1C81DF0F-0AF6-4A5A-811E-CE93013D70D4}|LiveStream.API\\LiveStream.API.csproj|d:\\livestream\\livestream\\livestream.api\\streamhub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1C81DF0F-0AF6-4A5A-811E-CE93013D70D4}|LiveStream.API\\LiveStream.API.csproj|solutionrelative:livestream.api\\streamhub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1C81DF0F-0AF6-4A5A-811E-CE93013D70D4}|LiveStream.API\\LiveStream.API.csproj|d:\\livestream\\livestream\\livestream.api\\controllers\\livestreamcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1C81DF0F-0AF6-4A5A-811E-CE93013D70D4}|LiveStream.API\\LiveStream.API.csproj|solutionrelative:livestream.api\\controllers\\livestreamcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1C81DF0F-0AF6-4A5A-811E-CE93013D70D4}|LiveStream.API\\LiveStream.API.csproj|d:\\livestream\\livestream\\livestream.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1C81DF0F-0AF6-4A5A-811E-CE93013D70D4}|LiveStream.API\\LiveStream.API.csproj|solutionrelative:livestream.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "LiveStreamController.cs",
+              "DocumentMoniker": "D:\\LiveStream\\LiveStream\\LiveStream.API\\Controllers\\LiveStreamController.cs",
+              "RelativeDocumentMoniker": "LiveStream.API\\Controllers\\LiveStreamController.cs",
+              "ToolTip": "D:\\LiveStream\\LiveStream\\LiveStream.API\\Controllers\\LiveStreamController.cs",
+              "RelativeToolTip": "LiveStream.API\\Controllers\\LiveStreamController.cs",
+              "ViewState": "AgIAACkAAAAAAAAAAAAIwD8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-02T15:04:45.556Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "JanusService.cs",
+              "DocumentMoniker": "D:\\LiveStream\\LiveStream\\LiveStream.APPLICATION\\JanusService.cs",
+              "RelativeDocumentMoniker": "LiveStream.APPLICATION\\JanusService.cs",
+              "ToolTip": "D:\\LiveStream\\LiveStream\\LiveStream.APPLICATION\\JanusService.cs",
+              "RelativeToolTip": "LiveStream.APPLICATION\\JanusService.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAA9wAwAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-02T13:54:37.685Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "DeviceRepository.cs",
+              "DocumentMoniker": "D:\\LiveStream\\LiveStream\\LiveStream.INFRASTRUCTURE\\Repositories\\DeviceRepository.cs",
+              "RelativeDocumentMoniker": "LiveStream.INFRASTRUCTURE\\Repositories\\DeviceRepository.cs",
+              "ToolTip": "D:\\LiveStream\\LiveStream\\LiveStream.INFRASTRUCTURE\\Repositories\\DeviceRepository.cs*",
+              "RelativeToolTip": "LiveStream.INFRASTRUCTURE\\Repositories\\DeviceRepository.cs*",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAQwB0AAABVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-01T14:24:14.37Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "StreamHub.cs",
+              "DocumentMoniker": "D:\\LiveStream\\LiveStream\\LiveStream.API\\StreamHub.cs",
+              "RelativeDocumentMoniker": "LiveStream.API\\StreamHub.cs",
+              "ToolTip": "D:\\LiveStream\\LiveStream\\LiveStream.API\\StreamHub.cs",
+              "RelativeToolTip": "LiveStream.API\\StreamHub.cs",
+              "ViewState": "AgIAAEYAAAAAAAAAAADwv2YAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-01T14:20:40.003Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\LiveStream\\LiveStream\\LiveStream.API\\Program.cs",
+              "RelativeDocumentMoniker": "LiveStream.API\\Program.cs",
+              "ToolTip": "D:\\LiveStream\\LiveStream\\LiveStream.API\\Program.cs",
+              "RelativeToolTip": "LiveStream.API\\Program.cs",
+              "ViewState": "AgIAADYAAAAAAAAAAAAAAEQAAABNAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-01T12:37:15.627Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
