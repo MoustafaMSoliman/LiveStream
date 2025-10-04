@@ -197,7 +197,8 @@ public class StreamManager : IStreamManager
     /// <summary>
     /// الحصول على أو إنشاء ستريم للجهاز
     /// </summary>
-    public async Task<DeviceStream?> GetOrCreateDeviceStreamAsync(int deviceId)
+    /// 
+   /* public async Task<DeviceStream?> GetOrCreateDeviceStreamAsync(int deviceId)
     {
         try
         {
@@ -244,6 +245,67 @@ public class StreamManager : IStreamManager
             _logger.LogInformation("تم إنشاء ستريم جديد للجهاز {DeviceId} مع mountpoint {MountpointId}",
                 deviceId, mountpointId);
 
+            return deviceStream;
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "خطأ غير متوقع في إنشاء ستريم للجهاز {DeviceId}", deviceId);
+            return null;
+        }
+    }
+   */
+    public async Task<DeviceStream?> GetOrCreateDeviceStreamAsync(int deviceId)
+    {
+        try
+        {
+            // لو الستريم بالفعل شغال في الكاش
+            if (_activeStreams.TryGetValue(deviceId, out var stream) && stream.IsActive)
+            {
+                stream.LastStreamActivity = DateTime.UtcNow;
+                _logger.LogDebug("تم استخدام الستريم النشط للجهاز {DeviceId}", deviceId);
+                return stream;
+            }
+
+            // نجيب بيانات الجهاز من الريبو
+            var device = await _deviceRepository.GetDeviceAsync(deviceId);
+            if (device == null)
+            {
+                _logger.LogWarning("الجهاز {DeviceId} غير موجود", deviceId);
+                return null;
+            }
+
+            // بما إننا بنتعامل مع MediaMTX، فمش محتاجين نعمل mountpoint في Janus
+            // MediaMTX بياخد الـRTSP source مباشرة من config file أو الـAPI
+            var streamName = $"cam{device.Id}";
+
+            // ممكن نتحقق لو السيرفر فعلاً شايف الستريم (اختياري)
+            var mediaMtxApiUrl = "http://localhost:9997/v1/paths/list";
+            try
+            {
+                using var http = new HttpClient();
+                var response = await http.GetAsync(mediaMtxApiUrl);
+                var content = await response.Content.ReadAsStringAsync();
+                _logger.LogDebug("MediaMTX response: {Response}", content);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogWarning(ex, "تعذر الاتصال بـ MediaMTX للتحقق من المسارات");
+            }
+
+            // نحط الستريم في الكاش
+            var deviceStream = new DeviceStream
+            {
+                DeviceId = device.Id,
+                MountpointId = device.MountpointId > 0 ? device.MountpointId : device.Id, // ممكن نخليها نفس الـid مؤقتًا
+                IsActive = true,
+                CreatedAt = DateTime.UtcNow,
+                LastStreamActivity = DateTime.UtcNow,
+                ViewerCount = 0
+            };
+
+            _activeStreams[deviceId] = deviceStream;
+
+            _logger.LogInformation("تم إنشاء ستريم MediaMTX جديد للجهاز {DeviceId}", deviceId);
             return deviceStream;
         }
         catch (Exception ex)

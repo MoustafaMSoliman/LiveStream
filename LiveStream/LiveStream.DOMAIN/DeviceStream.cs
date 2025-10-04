@@ -3,6 +3,7 @@
 public class DeviceStream
 {
     public int DeviceId { get; set; }
+    public string Name { get; set; } = string.Empty;
     public int MountpointId { get; set; }
     public bool IsActive { get; set; }
     public DateTime CreatedAt { get; set; }

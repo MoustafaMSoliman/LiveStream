@@ -1,0 +1,17 @@
+version: '3.8'
+services:
+  mediamtx:
+    image: bluenviron/mediamtx:latest
+    container_name: mediamtx
+    restart: unless-stopped
+    volumes:
+      - ./mediamtx.yml:/mediamtx.yml  # Mount custom config file
+    command: ["/mediamtx.yml"]        # Explicitly specify config
+    ports:                            # نكشف البورتات بدل network_mode: host
+      - "8554:8554"     # RTSP
+      - "1935:1935"     # RTMP
+      - "8888:8888"     # HLS
+      - "8889:8889"     # WebRTC HTTP
+      - "8189:8189/udp" # WebRTC ICE/UDP
+      - "8890:8890/udp" # SRT
+      - "9997:9997"     # API

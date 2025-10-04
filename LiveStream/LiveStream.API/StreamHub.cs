@@ -66,7 +66,83 @@ public class StreamHub : Hub
         await base.OnDisconnectedAsync(exception);
     }
 
-   
+    /*
+     public async Task<HubResult<SignalingInfo>> RequestSignalingInfo(int deviceId)
+     {
+         var userId = 1; 
+
+         try
+         {
+             var device = await _streamManager.GetOrCreateDeviceStreamAsync(deviceId);
+             if (device == null)
+             {
+                 return HubResult<SignalingInfo>.Failure("Device not found");
+             }
+
+             var signalingInfo = new SignalingInfo
+             {
+                 JanusWebSocketUrl = "ws://localhost:8188/janus",
+                 MountpointId = device.MountpointId,
+                 DeviceId = deviceId,
+                 DeviceName = "devName",
+                 GeneratedAt = DateTime.UtcNow,
+                 IceServers = new List<IceServer>
+                 {
+                     new IceServer { Urls = "stun:stun.l.google.com:19302" },
+                     new IceServer { Urls = "stun:stun1.l.google.com:19302" }
+                 }
+             };
+
+             return HubResult<SignalingInfo>.Successful(signalingInfo);
+         }
+         catch (Exception ex)
+         {
+             _logger.LogError(ex, "Error getting signaling info for device {DeviceId}", deviceId);
+             return HubResult<SignalingInfo>.Failure("Error getting stream information");
+         }
+     }
+    */
+    /*
+    public async Task<HubResult<SignalingInfo>> RequestSignalingInfo(int deviceId)
+    {
+        var userId = 1;
+
+        try
+        {
+            var device = await _streamManager.GetOrCreateDeviceStreamAsync(deviceId);
+            if (device == null)
+            {
+                return HubResult<SignalingInfo>.Failure("Device not found");
+            }
+
+            
+            var whepUrl = $"http://localhost:8889/whep/cam{device.DeviceId}";
+            var hlsUrl = $"http://localhost:8888/cam{device.DeviceId}/index.m3u8";
+
+            var signalingInfo = new SignalingInfo
+            {
+                MediaType = "WebRTC", 
+                WebRtcPlayUrl = whepUrl,
+                HlsUrl = hlsUrl,
+                DeviceId = deviceId,
+                DeviceName = device.Name,
+                GeneratedAt = DateTime.UtcNow,
+                IceServers = new List<IceServer>
+            {
+                new IceServer { Urls = "stun:stun.l.google.com:19302" },
+                new IceServer { Urls = "stun:stun1.l.google.com:19302" }
+            }
+            };
+
+            return HubResult<SignalingInfo>.Successful(signalingInfo);
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Error getting signaling info for device {DeviceId}", deviceId);
+            return HubResult<SignalingInfo>.Failure("Error getting stream information");
+        }
+    }
+    */
     public async Task<HubResult<SignalingInfo>> RequestSignalingInfo(int deviceId)
     {
         var userId = 1; 
@@ -79,18 +155,27 @@ public class StreamHub : Hub
                 return HubResult<SignalingInfo>.Failure("Device not found");
             }
 
+            // suggest naming cam{camId} in the config file
+            var streamName = $"cam{device.DeviceId}";
+
+            // بناء رابط MediaMTX
+            var mediaMtxHost = "localhost"; 
+            var webrtcPort = 8889;
+            var hlsPort = 8888;
+
             var signalingInfo = new SignalingInfo
             {
-                JanusWebSocketUrl = "ws://localhost:8188/janus",
-                MountpointId = device.MountpointId,
-                DeviceId = deviceId,
-                DeviceName = "devName",
+                MediaType = "WebRTC",
+                WebRtcPlayUrl = $"http://{mediaMtxHost}:{webrtcPort}/whep/{streamName}",
+                HlsUrl = $"http://{mediaMtxHost}:{hlsPort}/{streamName}/index.m3u8",
+                DeviceId = device.DeviceId,
+                DeviceName = device.Name,
                 GeneratedAt = DateTime.UtcNow,
                 IceServers = new List<IceServer>
-                {
-                    new IceServer { Urls = "stun:stun.l.google.com:19302" },
-                    new IceServer { Urls = "stun:stun1.l.google.com:19302" }
-                }
+            {
+                new IceServer { Urls = "stun:stun.l.google.com:19302" },
+                new IceServer { Urls = "stun:stun1.l.google.com:19302" }
+            }
             };
 
             return HubResult<SignalingInfo>.Successful(signalingInfo);
@@ -136,7 +221,7 @@ public class StreamHub : Hub
             return HubResult<List<DeviceInfo>>.Failure("Error getting devices");
         }
     }
-
+    /*
     public async Task<HubResult<int>> StartWatching(int deviceId)
     {
         var userId = 1;
@@ -159,7 +244,67 @@ public class StreamHub : Hub
             return HubResult<int>.Failure("Error starting stream");
         }
     }
+    */
+    public async Task<HubResult<int>> StartWatching(int deviceId)
+    {
+        var userId = 1; 
 
+        try
+        {
+            var device = await _streamManager.GetOrCreateDeviceStreamAsync(deviceId);
+            if (device == null)
+                return HubResult<int>.Failure("Device not found");
+
+            // أضف المستخدم إلى جروب الكاميرا في SignalR (للتحديثات أو الـ Viewer Count)
+            await Groups.AddToGroupAsync(Context.ConnectionId, $"device-{deviceId}");
+
+            if (_sessions.TryGetValue(Context.ConnectionId, out var userSession))
+            {
+                userSession.WatchingDevices.Add(deviceId);
+            }
+
+            // Notify viewers that new one came
+            await Clients.Group($"device-{deviceId}").SendAsync("ViewerJoined", userId, deviceId);
+
+            _logger.LogInformation("User {UserId} started watching device {DeviceId}", userId, deviceId);
+
+            
+            return HubResult<int>.Successful(deviceId);
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Error starting stream watch for device {DeviceId}", deviceId);
+            return HubResult<int>.Failure("Error starting stream");
+        }
+    }
+
+    public async Task<HubResult> StopWatching(int deviceId)
+    {
+        var userId = 1;
+
+        try
+        {
+            await Groups.RemoveFromGroupAsync(Context.ConnectionId, $"device-{deviceId}");
+
+            if (_sessions.TryGetValue(Context.ConnectionId, out var userSession))
+            {
+                userSession.WatchingDevices.Remove(deviceId);
+            }
+
+            // Notify viewers that one is out
+            await Clients.Group($"device-{deviceId}").SendAsync("ViewerLeft", userId, deviceId);
+
+            _logger.LogInformation("User {UserId} stopped watching device {DeviceId}", userId, deviceId);
+
+            return HubResult.Successful();
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Error stopping stream watch for device {DeviceId}", deviceId);
+            return HubResult.Failure("Error stopping stream");
+        }
+    }
+    /*
     public async Task<HubResult> StopWatching(int deviceId)
     {
         var userId = 1;
@@ -182,6 +327,7 @@ public class StreamHub : Hub
             return HubResult.Failure("Error stopping stream");
         }
     }
+    */
     public async Task<HubResult> Heartbeat()
     {
         try

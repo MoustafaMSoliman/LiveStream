@@ -66,7 +66,7 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("SignalRPolicy", policy =>
     {
-        policy.WithOrigins("http://localhost:50641", "https://localhost:50641")
+        policy.WithOrigins("http://localhost:4200", "https://localhost:4200")
               .AllowAnyHeader()
               .AllowAnyMethod()
               .AllowCredentials();
@@ -78,9 +78,13 @@ builder.Services.AddApplicationServices().AddInfrastructureServices();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
 builder.Services.AddSwaggerGen();
-builder.Services.AddHttpClient("janus", c =>
+//builder.Services.AddHttpClient("janus", c =>
+//{
+//    c.BaseAddress = new Uri("http://localhost:8088/janus/");
+//});
+builder.Services.AddHttpClient("mediamtx", c =>
 {
-    c.BaseAddress = new Uri("http://localhost:8088/janus/");
+    c.BaseAddress = new Uri("http://localhost:9997/v1/");
 });
 
 builder.Services.AddScoped<IJanusService, JanusService>();

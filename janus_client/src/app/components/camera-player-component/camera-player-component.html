@@ -1,41 +1,20 @@
-<div class="camera-container">
-      <!-- حالة النظام -->
-      <div class="status-bar">
-        <div [class]="getStatusClass()">{{ status }}</div>
-        <div *ngIf="currentDevice" class="device-info">
-          Device: {{ currentDevice.name }} | Viewers: {{ currentDevice.viewerCount }}
-        </div>
-      </div>
+<div class="p-3">
+  <h2>🎥 Stream Viewer</h2>
 
-      <!-- قائمة الأجهزة -->
-      <div class="devices-panel" *ngIf="showDevicesPanel">
-        <h3>Available Devices</h3>
-        <div *ngFor="let device of accessibleDevices" 
-             class="device-item"
-             [class.selected]="device.id === selectedDeviceId"
-             (click)="selectDevice(device)">
-          <div class="device-name">{{ device.name }}</div>
-          <div class="device-status" [class.online]="device.isOnline">
-            {{ device.isOnline ? '🟢 Connected' : '🔴  Not Connected' }}
-          </div>
-          <div class="device-location">{{ device.location }}</div>
-        </div>
-      </div>
+  <div *ngIf="accessibleDevices.length > 0; else noDevices">
+    <ul class="device-list">
+      <li *ngFor="let device of accessibleDevices" (click)="startStream(device)">
+        {{ device.name }} - {{ device.status }}
+      </li>
+    </ul>
+  </div>
 
-      <!-- مشغل الفيديو -->
-      <div class="video-container">
-        <video #videoElement 
-               class="video-player"
-               playsinline 
-               muted 
-               controls
-               (click)="togglePlay()">
-          Browser doesn't support this video
-        </video>
-        
-        <!-- زر التشغيل -->
-        <div *ngIf="showPlayButton" class="play-overlay" (click)="playVideo()">
-          <button class="play-button">▶ Stream Play</button>
-        </div>
-      </div>
-    </div>
+  <ng-template #noDevices>
+    <p>No accessible devices found.</p>
+  </ng-template>
+
+  <div *ngIf="streamInfo">
+    <h3>{{ streamInfo.deviceName }}</h3>
+    <video id="video" controls autoplay muted playsinline style="width: 100%; max-height: 500px;"></video>
+  </div>
+</div>
