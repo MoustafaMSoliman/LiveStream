@@ -2,8 +2,7 @@
 
 api: yes
 apiAddress: :9997
-readUser: admin       # top-level, not nested
-readPass: admin 
+
 
 
 # RTSP Configuration
@@ -18,7 +17,15 @@ hlsAddress: :8888
 
 # WebRTC Configuration (WHIP/WHEP)
 webrtcAddress: :8889
+webrtcAllowOrigin: "*"
+#authInternalUsers:
+# - user: admin
+#    pass: admin
+#    permissions:
+#      - action: publish
+#      - action: read
 
+      
 # Example path configuration for a camera
 paths:
 
@@ -26,3 +33,6 @@ paths:
     source: rtsp://170.93.143.139/rtplive/470011e600ef003a004ee33696235daa
     sourceOnDemand: yes  # Only pull when client connects
 
+  cam2:
+    source: rtsp://170.93.143.139/rtplive/470011e600ef003a004ee33696235daa
+    sourceOnDemand: yes  # Only pull when client connects

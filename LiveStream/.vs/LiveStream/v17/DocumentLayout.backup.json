@@ -7,12 +7,12 @@
       "RelativeMoniker": "D:0:0:{1C81DF0F-0AF6-4A5A-811E-CE93013D70D4}|LiveStream.API\\LiveStream.API.csproj|solutionrelative:livestream.api\\streamhub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{814158B5-254D-4DA0-8450-539D752ECBE8}|LiveStream.DOMAIN\\LiveStream.DOMAIN.csproj|d:\\livestream\\livestream\\livestream.domain\\signalinginfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{814158B5-254D-4DA0-8450-539D752ECBE8}|LiveStream.DOMAIN\\LiveStream.DOMAIN.csproj|solutionrelative:livestream.domain\\signalinginfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{DE5A1EFF-011F-40F4-838F-1DEE37A18176}|LiveStream.APPLICATION\\LiveStream.APPLICATION.csproj|d:\\livestream\\livestream\\livestream.application\\service\\streammanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DE5A1EFF-011F-40F4-838F-1DEE37A18176}|LiveStream.APPLICATION\\LiveStream.APPLICATION.csproj|solutionrelative:livestream.application\\service\\streammanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{814158B5-254D-4DA0-8450-539D752ECBE8}|LiveStream.DOMAIN\\LiveStream.DOMAIN.csproj|d:\\livestream\\livestream\\livestream.domain\\signalinginfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{814158B5-254D-4DA0-8450-539D752ECBE8}|LiveStream.DOMAIN\\LiveStream.DOMAIN.csproj|solutionrelative:livestream.domain\\signalinginfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A716A146-4DB4-4A88-87D3-C76D3867EBF7}|LiveStream.INFRASTRUCTURE\\LiveStream.INFRASTRUCTURE.csproj|d:\\livestream\\livestream\\livestream.infrastructure\\repositories\\devicerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -50,13 +50,13 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "StreamManager.cs",
               "DocumentMoniker": "D:\\LiveStream\\LiveStream\\LiveStream.APPLICATION\\Service\\StreamManager.cs",
               "RelativeDocumentMoniker": "LiveStream.APPLICATION\\Service\\StreamManager.cs",
               "ToolTip": "D:\\LiveStream\\LiveStream\\LiveStream.APPLICATION\\Service\\StreamManager.cs",
               "RelativeToolTip": "LiveStream.APPLICATION\\Service\\StreamManager.cs",
-              "ViewState": "AgIAAPsAAAAAAAAAAAAQwBMBAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAFkBAAAAAAAAAAAowBMBAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-04T22:08:11.344Z",
               "EditorCaption": ""
@@ -99,7 +99,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "SignalingInfo.cs",
               "DocumentMoniker": "D:\\LiveStream\\LiveStream\\LiveStream.DOMAIN\\SignalingInfo.cs",
               "RelativeDocumentMoniker": "LiveStream.DOMAIN\\SignalingInfo.cs",
@@ -107,8 +107,7 @@
               "RelativeToolTip": "LiveStream.DOMAIN\\SignalingInfo.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAwBUAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-04T21:14:40.035Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-04T21:14:40.035Z"
             },
             {
               "$type": "Document",
@@ -142,7 +141,7 @@
               "RelativeDocumentMoniker": "LiveStream.API\\StreamHub.cs",
               "ToolTip": "D:\\LiveStream\\LiveStream\\LiveStream.API\\StreamHub.cs",
               "RelativeToolTip": "LiveStream.API\\StreamHub.cs",
-              "ViewState": "AgIAAKIAAAAAAAAAAAAswKgAAABMAAAAAAAAAA==",
+              "ViewState": "AgIAAJYAAAAAAAAAAAAIwKgAAABNAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-01T14:20:40.003Z",
               "EditorCaption": ""

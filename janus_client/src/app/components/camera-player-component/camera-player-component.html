@@ -18,3 +18,11 @@
     <video id="video" controls autoplay muted playsinline style="width: 100%; max-height: 500px;"></video>
   </div>
 </div>
+<div class="video-container">
+      <video #videoElement controls width="800" height="450"></video>
+      <div class="controls">
+        <button (click)="playVideo()" [disabled]="isPlaying">Play Stream</button>
+        <button (click)="stopVideo()" [disabled]="!isPlaying">Stop Stream</button>
+      </div>
+      <div *ngIf="error" class="error">{{ error }}</div>
+</div>

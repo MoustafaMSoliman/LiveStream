@@ -2,6 +2,7 @@ import { Component, ElementRef, input, Input, OnDestroy, OnInit, ViewChild } fro
 import { CameraService } from '../../services/camera-service';
 import { NgFor, NgIf } from '@angular/common';
 import { DeviceInfo, SignalingInfo, SignalrStreamService } from '../../services/signalr-stream.service';
+import { WebRTCService } from '../../services/web-rtc-service';
 
 @Component({
   selector: 'app-camera-player-component',
@@ -11,16 +12,19 @@ import { DeviceInfo, SignalingInfo, SignalrStreamService } from '../../services/
   styleUrls: ['./camera-player-component.css']
 })
 export class CameraPlayerComponent implements OnInit, OnDestroy {
+  @ViewChild('videoElement') videoElement!: ElementRef<HTMLVideoElement>;
+  
+  isPlaying = false;
+  error = '';
+
   accessibleDevices: any[] = [];
   selectedDevice?: DeviceInfo;
   streamInfo?: SignalingInfo;
   status = 'Preparing...';
 
   peerConnection: RTCPeerConnection | null = null;
-  constructor(private signalService: SignalrStreamService) {}
-  ngOnDestroy(): void {
-    throw new Error('Method not implemented.');
-  }
+  constructor(private webrtcService: WebRTCService, private signalService: SignalrStreamService) {}
+ 
 
   async ngOnInit() {
     const connected = await this.signalService.startConnection();
@@ -39,7 +43,27 @@ private async loadAccessibleDevices(): Promise<void> {
       this.status = `  Load devices failed: ${result.error}`;
     }
   }
+async playVideo(): Promise<void> {
+  try {
+    this.error = '';
+    await this.webrtcService.playStream('http://localhost:8889/cam1/whep', this.videoElement.nativeElement);
+    this.isPlaying = true;
+  } catch (err) {
+    this.error = 'Failed to play WebRTC stream: ' + (err as Error).message;
+    this.isPlaying = false;
+  }
+}
 
+  stopVideo(): void {
+    this.webrtcService.stopStream();
+    this.videoElement.nativeElement.srcObject = null;
+    this.isPlaying = false;
+    this.error = '';
+  }
+
+  ngOnDestroy(): void {
+    this.stopVideo();
+  }
  
   async startStream(device: DeviceInfo) {
     console.log('🎬 Starting stream for:', device);
@@ -48,40 +72,79 @@ private async loadAccessibleDevices(): Promise<void> {
     console.log('📡 Stream info result:', result);
     if (result.success && result.data) {
       this.streamInfo = result.data;
-      this.playStream(result.data);
+      this.webrtcService.playStream('http://localhost:8889/cam1/whep', this.videoElement.nativeElement);
     } else {
       console.error('⚠️ Failed to get stream info:', result.error);
     }
   }
+/*
+ async playStream(videoElement: HTMLVideoElement): Promise<void> {
+  this.stopStream();
 
-  playStream(info: SignalingInfo) {
-    const video = document.getElementById('video') as HTMLVideoElement;
-    if (!video) return;
-    // debugger;
-    if (info.protocol.toLowerCase()  === 'hls') {
-      /*if (Hls.isSupported()) {
-        const hls = new Hls();
-        hls.loadSource(info.streamUrl);
-        hls.attachMedia(video);
-        hls.on(Hls.Events.MANIFEST_PARSED, () => {
-          video.play();
-        });
-      } else {
-        video.src = info.streamUrl;
-        video.play();
-      }*/
-      console.log('HLS stream (use Hls.js):', info.streamUrl);
-    } 
-    else if (info.protocol.toLowerCase() === 'rtsp') {
-      console.log('RTSP stream (needs external player):', info.streamUrl);
+  // Use the correct WHEP URL
+  const whepUrl = 'http://localhost:8889/whep/cam1';
+  console.log('Creating WebRTC connection to:', whepUrl);
+
+  this.peerConnection = new RTCPeerConnection({
+    iceServers: [{ urls: 'stun:stun.l.google.com:19302' }]
+  });
+
+  // Handle incoming tracks
+  this.peerConnection.ontrack = (event) => {
+    console.log('WebRTC: Received track:', event.track.kind);
+    if (event.streams && event.streams[0]) {
+      videoElement.srcObject = event.streams[0];
+      videoElement.play().catch(e => {
+        console.error('Video play failed:', e);
+      });
     }
+  };
+
+  // Add connection state monitoring
+  this.peerConnection.onconnectionstatechange = () => {
+    console.log('Connection state:', this.peerConnection?.connectionState);
+  };
+
+  try {
+    // Add transceivers for receiving video/audio
+    this.peerConnection.addTransceiver('video', { direction: 'recvonly' });
+    this.peerConnection.addTransceiver('audio', { direction: 'recvonly' });
+
+    // Create and send offer
+    const offer = await this.peerConnection.createOffer();
+    await this.peerConnection.setLocalDescription(offer);
+
+    console.log('Sending SDP offer to WHEP endpoint...');
+    const response = await fetch(whepUrl, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/sdp',
+      },
+      body: offer.sdp
+    });
+
+    console.log('WHEP Response status:', response.status);
     
-    else if( info.protocol.toLowerCase()  === 'webrtc') {
-      console.log('WebRTC stream (needs WebRTC handling):', info.streamUrl);
-      this.playWebRTC(info.streamUrl, []);
+    if (!response.ok) {
+      const errorText = await response.text();
+      throw new Error(`WHEP server returned ${response.status}: ${errorText}`);
     }
-  }
 
+    const answerSdp = await response.text();
+    await this.peerConnection.setRemoteDescription({
+      type: 'answer',
+      sdp: answerSdp
+    });
+
+    console.log('WebRTC WHEP connection established!');
+
+  } catch (error) {
+    console.error('WebRTC WHEP connection failed:', error);
+    //this.stopStream();
+    throw error;
+  }
+}
+*/
   async playWebRTC(playUrl: string, iceServers: any[]) {
     console.log('🚀 Starting WebRTC stream from:', playUrl);
       const video = document.getElementById('video') as HTMLVideoElement;
