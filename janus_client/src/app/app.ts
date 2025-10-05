@@ -5,7 +5,7 @@ import { JanusStream } from './components/janus-stream/janus-stream';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CameraPlayerComponent, JanusStream],
+  imports: [CameraPlayerComponent],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

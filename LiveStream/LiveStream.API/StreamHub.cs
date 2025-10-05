@@ -165,8 +165,8 @@ public class StreamHub : Hub
 
             var signalingInfo = new SignalingInfo
             {
-                MediaType = "WebRTC",
-                WebRtcPlayUrl = $"http://{mediaMtxHost}:{webrtcPort}/whep/{streamName}",
+                Protocol = "WebRTC",
+               StreamUrl = $"http://{mediaMtxHost}:{webrtcPort}/{streamName}",
                 HlsUrl = $"http://{mediaMtxHost}:{hlsPort}/{streamName}/index.m3u8",
                 DeviceId = device.DeviceId,
                 DeviceName = device.Name,

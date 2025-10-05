@@ -1,6 +1,10 @@
 # API Configuration
+
 api: yes
 apiAddress: :9997
+readUser: admin       # top-level, not nested
+readPass: admin 
+
 
 # RTSP Configuration
 rtspAddress: :8554
@@ -17,6 +21,8 @@ webrtcAddress: :8889
 
 # Example path configuration for a camera
 paths:
+
   cam1:
     source: rtsp://170.93.143.139/rtplive/470011e600ef003a004ee33696235daa
     sourceOnDemand: yes  # Only pull when client connects
+

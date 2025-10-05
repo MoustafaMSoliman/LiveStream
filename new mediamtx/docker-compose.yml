@@ -1,8 +1,8 @@
 version: '3.8'
 services:
   mediamtx:
-    image: bluenviron/mediamtx:latest
-    container_name: mediamtx
+    image: bluenviron/mediamtx:latest-ffmpeg
+    container_name: mediamtx2
     restart: unless-stopped
     volumes:
       - ./mediamtx.yml:/mediamtx.yml  # Mount custom config file

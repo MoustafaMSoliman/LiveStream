@@ -16,10 +16,10 @@ public class SignalingInfo
 public class SignalingInfo
 {
     //(WebRTC or HLS)
-    public string MediaType { get; set; } = "WebRTC";
+    public string Protocol { get; set; } = "WebRTC";
 
     // WebRTC (WHEP endpoint)
-    public string WebRtcPlayUrl { get; set; } = string.Empty;
+    public string StreamUrl { get; set; } = string.Empty;
 
     
     public string? HlsUrl { get; set; }
