@@ -13,7 +13,7 @@ import { WebRTCService } from '../../services/web-rtc-service';
 })
 export class CameraPlayerComponent implements OnInit, OnDestroy {
   @ViewChild('videoElement') videoElement!: ElementRef<HTMLVideoElement>;
-  
+  @Input() cameraId: string = 'cam1';
   isPlaying = false;
   error = '';
 
@@ -43,6 +43,30 @@ private async loadAccessibleDevices(): Promise<void> {
       this.status = `  Load devices failed: ${result.error}`;
     }
   }
+
+  async play(): Promise<void> {
+    try {
+      this.status = 'Connecting...';
+      await this.webrtcService.playStream(this.cameraId, this.videoElement.nativeElement);
+      this.isPlaying = true;
+      this.status = 'Connected';
+      
+      // Clear status after 3 seconds
+      setTimeout(() => this.status = '', 3000);
+    } catch (error) {
+      this.status = 'Connection failed';
+      this.isPlaying = false;
+    }
+  }
+  stop(): void {
+    this.webrtcService.stopStream(this.cameraId);
+    this.isPlaying = false;
+    this.status = 'Stopped';
+    
+    if (this.videoElement.nativeElement.srcObject) {
+      this.videoElement.nativeElement.srcObject = null;
+    }
+  }
 async playVideo(): Promise<void> {
   try {
     this.error = '';
@@ -55,7 +79,7 @@ async playVideo(): Promise<void> {
 }
 
   stopVideo(): void {
-    this.webrtcService.stopStream();
+    this.webrtcService.stopStream(this.cameraId);
     this.videoElement.nativeElement.srcObject = null;
     this.isPlaying = false;
     this.error = '';

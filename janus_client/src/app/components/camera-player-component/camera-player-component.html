@@ -1,4 +1,4 @@
-<div class="p-3">
+<!--<div class="p-3">
   <h2>🎥 Stream Viewer</h2>
 
   <div *ngIf="accessibleDevices.length > 0; else noDevices">
@@ -25,4 +25,12 @@
         <button (click)="stopVideo()" [disabled]="!isPlaying">Stop Stream</button>
       </div>
       <div *ngIf="error" class="error">{{ error }}</div>
-</div>
+</div>-->
+<div class="video-container">
+      <video #videoElement controls width="800" height="450" autoplay></video>
+      <div class="controls">
+        <button (click)="play()" [disabled]="isPlaying">Play Stream</button>
+        <button (click)="stop()" [disabled]="!isPlaying">Stop Stream</button>
+        <span class="status" *ngIf="status">{{ status }}</span>
+      </div>
+    </div>

@@ -15,3 +15,7 @@
 .device-list li:hover {
   background-color: #dceeff;
 }
+.video-container { max-width: 800px; margin: 20px; }
+    .controls { margin: 10px 0; }
+    .controls button { margin-right: 10px; }
+    .status { margin-left: 10px; color: #666; }

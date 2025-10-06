@@ -1,6 +1,7 @@
 using LiveStream.API;
 using LiveStream.APPLICATION;
 using LiveStream.APPLICATION.Interfaces;
+using LiveStream.APPLICATION.Service;
 using LiveStream.INFRASTRUCTURE;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
@@ -45,7 +46,17 @@ builder.Services.AddSignalR();
 //            }
 //        };
 //    });
-
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+    .AddJwtBearer(options =>
+    {
+        options.TokenValidationParameters = new TokenValidationParameters
+        {
+            ValidateIssuerSigningKey = true,
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(builder.Configuration["Jwt:SecretKey"])),
+            ValidateIssuer = false,
+            ValidateAudience = false
+        };
+    });
 //// Add Authorization
 //builder.Services.AddAuthorization(options =>
 //{
@@ -66,10 +77,14 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("SignalRPolicy", policy =>
     {
-        policy.WithOrigins("http://localhost:4200", "https://localhost:4200")
-              .AllowAnyHeader()
-              .AllowAnyMethod()
-              .AllowCredentials();
+        policy.WithOrigins(
+            "http://localhost:4200",
+            "https://localhost:4200",
+            "https://localhost:5001"  
+        )
+        .AllowAnyHeader()
+        .AllowAnyMethod()
+        .AllowCredentials();
     });
 });
 // Add services to the container.
@@ -88,6 +103,8 @@ builder.Services.AddHttpClient("mediamtx", c =>
 });
 
 builder.Services.AddScoped<IJanusService, JanusService>();
+builder.Services.AddSingleton<StreamTokenService>();
+builder.Services.AddAuthentication();
 
 var app = builder.Build();
 
@@ -101,8 +118,8 @@ if (app.Environment.IsDevelopment())
 app.UseCors("SignalRPolicy");
 //app.UseHttpsRedirection();
 
-//app.UseAuthentication();
-//app.UseAuthorization();
+app.UseAuthentication();
+app.UseAuthorization();
 
 
 app.MapControllers();

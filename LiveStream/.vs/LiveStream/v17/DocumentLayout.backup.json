@@ -3,40 +3,44 @@
   "WorkspaceRootPath": "D:\\LiveStream\\LiveStream\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1C81DF0F-0AF6-4A5A-811E-CE93013D70D4}|LiveStream.API\\LiveStream.API.csproj|d:\\livestream\\livestream\\livestream.api\\streamhub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1C81DF0F-0AF6-4A5A-811E-CE93013D70D4}|LiveStream.API\\LiveStream.API.csproj|solutionrelative:livestream.api\\streamhub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE5A1EFF-011F-40F4-838F-1DEE37A18176}|LiveStream.APPLICATION\\LiveStream.APPLICATION.csproj|d:\\livestream\\livestream\\livestream.application\\service\\streammanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE5A1EFF-011F-40F4-838F-1DEE37A18176}|LiveStream.APPLICATION\\LiveStream.APPLICATION.csproj|solutionrelative:livestream.application\\service\\streammanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{814158B5-254D-4DA0-8450-539D752ECBE8}|LiveStream.DOMAIN\\LiveStream.DOMAIN.csproj|d:\\livestream\\livestream\\livestream.domain\\signalinginfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{814158B5-254D-4DA0-8450-539D752ECBE8}|LiveStream.DOMAIN\\LiveStream.DOMAIN.csproj|solutionrelative:livestream.domain\\signalinginfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A716A146-4DB4-4A88-87D3-C76D3867EBF7}|LiveStream.INFRASTRUCTURE\\LiveStream.INFRASTRUCTURE.csproj|d:\\livestream\\livestream\\livestream.infrastructure\\repositories\\devicerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A716A146-4DB4-4A88-87D3-C76D3867EBF7}|LiveStream.INFRASTRUCTURE\\LiveStream.INFRASTRUCTURE.csproj|solutionrelative:livestream.infrastructure\\repositories\\devicerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{814158B5-254D-4DA0-8450-539D752ECBE8}|LiveStream.DOMAIN\\LiveStream.DOMAIN.csproj|d:\\livestream\\livestream\\livestream.domain\\device.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{814158B5-254D-4DA0-8450-539D752ECBE8}|LiveStream.DOMAIN\\LiveStream.DOMAIN.csproj|solutionrelative:livestream.domain\\device.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{814158B5-254D-4DA0-8450-539D752ECBE8}|LiveStream.DOMAIN\\LiveStream.DOMAIN.csproj|d:\\livestream\\livestream\\livestream.domain\\devicestream.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{814158B5-254D-4DA0-8450-539D752ECBE8}|LiveStream.DOMAIN\\LiveStream.DOMAIN.csproj|solutionrelative:livestream.domain\\devicestream.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{1C81DF0F-0AF6-4A5A-811E-CE93013D70D4}|LiveStream.API\\LiveStream.API.csproj|d:\\livestream\\livestream\\livestream.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1C81DF0F-0AF6-4A5A-811E-CE93013D70D4}|LiveStream.API\\LiveStream.API.csproj|solutionrelative:livestream.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{814158B5-254D-4DA0-8450-539D752ECBE8}|LiveStream.DOMAIN\\LiveStream.DOMAIN.csproj|d:\\livestream\\livestream\\livestream.domain\\iceserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{814158B5-254D-4DA0-8450-539D752ECBE8}|LiveStream.DOMAIN\\LiveStream.DOMAIN.csproj|solutionrelative:livestream.domain\\iceserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1C81DF0F-0AF6-4A5A-811E-CE93013D70D4}|LiveStream.API\\LiveStream.API.csproj|d:\\livestream\\livestream\\livestream.api\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{1C81DF0F-0AF6-4A5A-811E-CE93013D70D4}|LiveStream.API\\LiveStream.API.csproj|solutionrelative:livestream.api\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1C81DF0F-0AF6-4A5A-811E-CE93013D70D4}|LiveStream.API\\LiveStream.API.csproj|d:\\livestream\\livestream\\livestream.api\\controllers\\livestreamcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1C81DF0F-0AF6-4A5A-811E-CE93013D70D4}|LiveStream.API\\LiveStream.API.csproj|solutionrelative:livestream.api\\controllers\\livestreamcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1C81DF0F-0AF6-4A5A-811E-CE93013D70D4}|LiveStream.API\\LiveStream.API.csproj|d:\\livestream\\livestream\\livestream.api\\controllers\\streamvalidationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1C81DF0F-0AF6-4A5A-811E-CE93013D70D4}|LiveStream.API\\LiveStream.API.csproj|solutionrelative:livestream.api\\controllers\\streamvalidationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1C81DF0F-0AF6-4A5A-811E-CE93013D70D4}|LiveStream.API\\LiveStream.API.csproj|d:\\livestream\\livestream\\livestream.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{1C81DF0F-0AF6-4A5A-811E-CE93013D70D4}|LiveStream.API\\LiveStream.API.csproj|solutionrelative:livestream.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE5A1EFF-011F-40F4-838F-1DEE37A18176}|LiveStream.APPLICATION\\LiveStream.APPLICATION.csproj|d:\\livestream\\livestream\\livestream.application\\service\\streamtokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE5A1EFF-011F-40F4-838F-1DEE37A18176}|LiveStream.APPLICATION\\LiveStream.APPLICATION.csproj|solutionrelative:livestream.application\\service\\streamtokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE5A1EFF-011F-40F4-838F-1DEE37A18176}|LiveStream.APPLICATION\\LiveStream.APPLICATION.csproj|d:\\livestream\\livestream\\livestream.application\\dtos\\streaminfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE5A1EFF-011F-40F4-838F-1DEE37A18176}|LiveStream.APPLICATION\\LiveStream.APPLICATION.csproj|solutionrelative:livestream.application\\dtos\\streaminfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE5A1EFF-011F-40F4-838F-1DEE37A18176}|LiveStream.APPLICATION\\LiveStream.APPLICATION.csproj|d:\\livestream\\livestream\\livestream.application\\dtos\\refreshtokenrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE5A1EFF-011F-40F4-838F-1DEE37A18176}|LiveStream.APPLICATION\\LiveStream.APPLICATION.csproj|solutionrelative:livestream.application\\dtos\\refreshtokenrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE5A1EFF-011F-40F4-838F-1DEE37A18176}|LiveStream.APPLICATION\\LiveStream.APPLICATION.csproj|d:\\livestream\\livestream\\livestream.application\\dtos\\tokenresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE5A1EFF-011F-40F4-838F-1DEE37A18176}|LiveStream.APPLICATION\\LiveStream.APPLICATION.csproj|solutionrelative:livestream.application\\dtos\\tokenresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE5A1EFF-011F-40F4-838F-1DEE37A18176}|LiveStream.APPLICATION\\LiveStream.APPLICATION.csproj|d:\\livestream\\livestream\\livestream.application\\dtos\\tokenrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE5A1EFF-011F-40F4-838F-1DEE37A18176}|LiveStream.APPLICATION\\LiveStream.APPLICATION.csproj|solutionrelative:livestream.application\\dtos\\tokenrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE5A1EFF-011F-40F4-838F-1DEE37A18176}|LiveStream.APPLICATION\\LiveStream.APPLICATION.csproj|d:\\livestream\\livestream\\livestream.application\\interfaces\\istreamtokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE5A1EFF-011F-40F4-838F-1DEE37A18176}|LiveStream.APPLICATION\\LiveStream.APPLICATION.csproj|solutionrelative:livestream.application\\interfaces\\istreamtokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -46,117 +50,137 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "StreamManager.cs",
-              "DocumentMoniker": "D:\\LiveStream\\LiveStream\\LiveStream.APPLICATION\\Service\\StreamManager.cs",
-              "RelativeDocumentMoniker": "LiveStream.APPLICATION\\Service\\StreamManager.cs",
-              "ToolTip": "D:\\LiveStream\\LiveStream\\LiveStream.APPLICATION\\Service\\StreamManager.cs",
-              "RelativeToolTip": "LiveStream.APPLICATION\\Service\\StreamManager.cs",
-              "ViewState": "AgIAAFkBAAAAAAAAAAAowBMBAAAAAAAAAAAAAA==",
+              "DocumentIndex": 6,
+              "Title": "RefreshTokenRequest.cs",
+              "DocumentMoniker": "D:\\LiveStream\\LiveStream\\LiveStream.APPLICATION\\DTOs\\RefreshTokenRequest.cs",
+              "RelativeDocumentMoniker": "LiveStream.APPLICATION\\DTOs\\RefreshTokenRequest.cs",
+              "ToolTip": "D:\\LiveStream\\LiveStream\\LiveStream.APPLICATION\\DTOs\\RefreshTokenRequest.cs",
+              "RelativeToolTip": "LiveStream.APPLICATION\\DTOs\\RefreshTokenRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-04T22:08:11.344Z",
+              "WhenOpened": "2025-10-06T14:37:49.199Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
-              "Title": "IceServer.cs",
-              "DocumentMoniker": "D:\\LiveStream\\LiveStream\\LiveStream.DOMAIN\\IceServer.cs",
-              "RelativeDocumentMoniker": "LiveStream.DOMAIN\\IceServer.cs",
-              "ToolTip": "D:\\LiveStream\\LiveStream\\LiveStream.DOMAIN\\IceServer.cs",
-              "RelativeToolTip": "LiveStream.DOMAIN\\IceServer.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "TokenResponse.cs",
+              "DocumentMoniker": "D:\\LiveStream\\LiveStream\\LiveStream.APPLICATION\\DTOs\\TokenResponse.cs",
+              "RelativeDocumentMoniker": "LiveStream.APPLICATION\\DTOs\\TokenResponse.cs",
+              "ToolTip": "D:\\LiveStream\\LiveStream\\LiveStream.APPLICATION\\DTOs\\TokenResponse.cs",
+              "RelativeToolTip": "LiveStream.APPLICATION\\DTOs\\TokenResponse.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-04T21:19:39.207Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "DeviceStream.cs",
-              "DocumentMoniker": "D:\\LiveStream\\LiveStream\\LiveStream.DOMAIN\\DeviceStream.cs",
-              "RelativeDocumentMoniker": "LiveStream.DOMAIN\\DeviceStream.cs",
-              "ToolTip": "D:\\LiveStream\\LiveStream\\LiveStream.DOMAIN\\DeviceStream.cs",
-              "RelativeToolTip": "LiveStream.DOMAIN\\DeviceStream.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAA0AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-04T21:18:51.979Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Device.cs",
-              "DocumentMoniker": "D:\\LiveStream\\LiveStream\\LiveStream.DOMAIN\\Device.cs",
-              "RelativeDocumentMoniker": "LiveStream.DOMAIN\\Device.cs",
-              "ToolTip": "D:\\LiveStream\\LiveStream\\LiveStream.DOMAIN\\Device.cs",
-              "RelativeToolTip": "LiveStream.DOMAIN\\Device.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-04T21:18:40.522Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "SignalingInfo.cs",
-              "DocumentMoniker": "D:\\LiveStream\\LiveStream\\LiveStream.DOMAIN\\SignalingInfo.cs",
-              "RelativeDocumentMoniker": "LiveStream.DOMAIN\\SignalingInfo.cs",
-              "ToolTip": "D:\\LiveStream\\LiveStream\\LiveStream.DOMAIN\\SignalingInfo.cs",
-              "RelativeToolTip": "LiveStream.DOMAIN\\SignalingInfo.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAwBUAAAAbAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-04T21:14:40.035Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "LiveStreamController.cs",
-              "DocumentMoniker": "D:\\LiveStream\\LiveStream\\LiveStream.API\\Controllers\\LiveStreamController.cs",
-              "RelativeDocumentMoniker": "LiveStream.API\\Controllers\\LiveStreamController.cs",
-              "ToolTip": "D:\\LiveStream\\LiveStream\\LiveStream.API\\Controllers\\LiveStreamController.cs",
-              "RelativeToolTip": "LiveStream.API\\Controllers\\LiveStreamController.cs",
-              "ViewState": "AgIAACkAAAAAAAAAAAAIwD8AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-02T15:04:45.556Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "DeviceRepository.cs",
-              "DocumentMoniker": "D:\\LiveStream\\LiveStream\\LiveStream.INFRASTRUCTURE\\Repositories\\DeviceRepository.cs",
-              "RelativeDocumentMoniker": "LiveStream.INFRASTRUCTURE\\Repositories\\DeviceRepository.cs",
-              "ToolTip": "D:\\LiveStream\\LiveStream\\LiveStream.INFRASTRUCTURE\\Repositories\\DeviceRepository.cs",
-              "RelativeToolTip": "LiveStream.INFRASTRUCTURE\\Repositories\\DeviceRepository.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-01T14:24:14.37Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "StreamHub.cs",
-              "DocumentMoniker": "D:\\LiveStream\\LiveStream\\LiveStream.API\\StreamHub.cs",
-              "RelativeDocumentMoniker": "LiveStream.API\\StreamHub.cs",
-              "ToolTip": "D:\\LiveStream\\LiveStream\\LiveStream.API\\StreamHub.cs",
-              "RelativeToolTip": "LiveStream.API\\StreamHub.cs",
-              "ViewState": "AgIAAJYAAAAAAAAAAAAIwKgAAABNAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-01T14:20:40.003Z",
+              "WhenOpened": "2025-10-06T14:37:17.054Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 2,
+              "Title": "StreamValidationController.cs",
+              "DocumentMoniker": "D:\\LiveStream\\LiveStream\\LiveStream.API\\Controllers\\StreamValidationController.cs",
+              "RelativeDocumentMoniker": "LiveStream.API\\Controllers\\StreamValidationController.cs",
+              "ToolTip": "D:\\LiveStream\\LiveStream\\LiveStream.API\\Controllers\\StreamValidationController.cs",
+              "RelativeToolTip": "LiveStream.API\\Controllers\\StreamValidationController.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAswEEAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-06T13:27:11.132Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "StreamInfo.cs",
+              "DocumentMoniker": "D:\\LiveStream\\LiveStream\\LiveStream.APPLICATION\\DTOs\\StreamInfo.cs",
+              "RelativeDocumentMoniker": "LiveStream.APPLICATION\\DTOs\\StreamInfo.cs",
+              "ToolTip": "D:\\LiveStream\\LiveStream\\LiveStream.APPLICATION\\DTOs\\StreamInfo.cs",
+              "RelativeToolTip": "LiveStream.APPLICATION\\DTOs\\StreamInfo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-06T14:38:10.811Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "TokenRequest.cs",
+              "DocumentMoniker": "D:\\LiveStream\\LiveStream\\LiveStream.APPLICATION\\DTOs\\TokenRequest.cs",
+              "RelativeDocumentMoniker": "LiveStream.APPLICATION\\DTOs\\TokenRequest.cs",
+              "ToolTip": "D:\\LiveStream\\LiveStream\\LiveStream.APPLICATION\\DTOs\\TokenRequest.cs",
+              "RelativeToolTip": "LiveStream.APPLICATION\\DTOs\\TokenRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-06T14:36:49.782Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\LiveStream\\LiveStream\\LiveStream.API\\Program.cs",
               "RelativeDocumentMoniker": "LiveStream.API\\Program.cs",
               "ToolTip": "D:\\LiveStream\\LiveStream\\LiveStream.API\\Program.cs",
               "RelativeToolTip": "LiveStream.API\\Program.cs",
-              "ViewState": "AgIAADwAAAAAAAAAAAAAAEQAAABHAAAAAAAAAA==",
+              "ViewState": "AgIAAGcAAAAAAAAAAAAmwHYAAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-01T12:37:15.627Z"
+              "WhenOpened": "2025-10-06T13:51:17.395Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "D:\\LiveStream\\LiveStream\\LiveStream.API\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "LiveStream.API\\Properties\\launchSettings.json",
+              "ToolTip": "D:\\LiveStream\\LiveStream\\LiveStream.API\\Properties\\launchSettings.json",
+              "RelativeToolTip": "LiveStream.API\\Properties\\launchSettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-10-06T13:50:12.959Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\LiveStream\\LiveStream\\LiveStream.API\\appsettings.json",
+              "RelativeDocumentMoniker": "LiveStream.API\\appsettings.json",
+              "ToolTip": "D:\\LiveStream\\LiveStream\\LiveStream.API\\appsettings.json",
+              "RelativeToolTip": "LiveStream.API\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-10-06T13:25:47.183Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "StreamTokenService.cs",
+              "DocumentMoniker": "D:\\LiveStream\\LiveStream\\LiveStream.APPLICATION\\Service\\StreamTokenService.cs",
+              "RelativeDocumentMoniker": "LiveStream.APPLICATION\\Service\\StreamTokenService.cs",
+              "ToolTip": "D:\\LiveStream\\LiveStream\\LiveStream.APPLICATION\\Service\\StreamTokenService.cs",
+              "RelativeToolTip": "LiveStream.APPLICATION\\Service\\StreamTokenService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoBAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-06T13:07:30.001Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "IStreamTokenService.cs",
+              "DocumentMoniker": "D:\\LiveStream\\LiveStream\\LiveStream.APPLICATION\\Interfaces\\IStreamTokenService.cs",
+              "RelativeDocumentMoniker": "LiveStream.APPLICATION\\Interfaces\\IStreamTokenService.cs",
+              "ToolTip": "D:\\LiveStream\\LiveStream\\LiveStream.APPLICATION\\Interfaces\\IStreamTokenService.cs",
+              "RelativeToolTip": "LiveStream.APPLICATION\\Interfaces\\IStreamTokenService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAABYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-06T13:06:46.771Z",
+              "EditorCaption": ""
             }
           ]
         }

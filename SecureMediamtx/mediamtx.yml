@@ -1,0 +1,54 @@
+# API Configuration
+
+api: yes
+apiAddress: :9997
+
+
+# Authentication - FIXED PERMISSIONS
+authInternalUsers:
+  - user: publisher
+    pass: ptest
+    permissions:
+      - action: publish
+    
+  - user: viewer
+    pass: vtest 
+    permissions:
+      - action: read
+    
+  - user: admin
+    pass: atest
+    permissions:
+      - action: publish
+      - action: read
+
+
+# IP-based restrictions
+#readIPs: [192.168.1.0/24, 10.0.0.0/8]
+#publishIPs: [192.168.1.100]  # Only specific cameras can publish
+
+# RTSP Configuration
+rtspAddress: :8554
+rtspTransports: [tcp, udp]
+
+# RTMP Configuration
+rtmpAddress: :1935
+
+# HLS Configuration
+hlsAddress: :8888
+
+# WebRTC Configuration (WHIP/WHEP)
+webrtcAddress: :8889
+#webrtcAllowOrigin: "*"
+
+externalAuthenticationURL: http://host.docker.internal:5000/api/stream/validate-token     
+# Example path configuration for a camera
+paths:
+
+  cam1:
+    source: rtsp://170.93.143.139/rtplive/470011e600ef003a004ee33696235daa
+    sourceOnDemand: yes  # Only pull when client connects
+
+  cam2:
+    source: rtsp://170.93.143.139/rtplive/470011e600ef003a004ee33696235daa
+    sourceOnDemand: yes  # Only pull when client connects

@@ -78,6 +78,48 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "LiveStream.API.Controllers.StreamValidationController",
+    "Method": "RefreshToken",
+    "RelativePath": "api/stream/refresh",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "LiveStream.APPLICATION.DTOs.RefreshTokenRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "LiveStream.API.Controllers.StreamValidationController",
+    "Method": "GenerateToken",
+    "RelativePath": "api/stream/token",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "LiveStream.APPLICATION.DTOs.TokenRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "LiveStream.API.Controllers.StreamValidationController",
+    "Method": "ValidateStreamToken",
+    "RelativePath": "api/stream/validate-token",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "LiveStream.API.Controllers.WeatherForecastController",
     "Method": "Get",
     "RelativePath": "WeatherForecast",

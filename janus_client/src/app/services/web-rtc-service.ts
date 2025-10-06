@@ -1,56 +1,57 @@
 import { Injectable } from '@angular/core';
+import { StreamInfo, StreamTokenService } from './stream-token-service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class WebRTCService {
-  private peerConnection: RTCPeerConnection | null = null;
+  private peerConnections = new Map<string, RTCPeerConnection>();
 
-  async playStream(streamUrl: string, videoElement: HTMLVideoElement): Promise<void> {
-    this.stopStream();
+  constructor(private tokenService: StreamTokenService) {}
 
-    console.log('Creating WebRTC connection to:', streamUrl);
+  async playStream(cameraId: string, videoElement: HTMLVideoElement): Promise<void> {
+    // Clean up existing connection
+    this.stopStream(cameraId);
 
-    this.peerConnection = new RTCPeerConnection({
-      iceServers: [
-        { urls: 'stun:stun.l.google.com:19302' }
-      ]
+    // Subscribe to token updates
+    this.tokenService.getStreamInfo(cameraId).subscribe(async streamInfo => {
+      if (streamInfo) {
+        await this.startWebRTCConnection(cameraId, streamInfo, videoElement);
+      }
+    });
+  }
+
+  private async startWebRTCConnection(cameraId: string, streamInfo: StreamInfo, videoElement: HTMLVideoElement): Promise<void> {
+    const peerConnection = new RTCPeerConnection({
+      iceServers: [{ urls: 'stun:stun.l.google.com:19302' }]
     });
 
-    // Handle incoming tracks
-    this.peerConnection.ontrack = (event) => {
-      console.log('WebRTC: Received track:', event.track.kind);
+    this.peerConnections.set(cameraId, peerConnection);
+
+    // Handle incoming video track
+    peerConnection.ontrack = (event) => {
       if (event.streams && event.streams[0]) {
         videoElement.srcObject = event.streams[0];
-        videoElement.play().catch(e => {
-          console.error('Video play failed:', e);
-        });
+        videoElement.play().catch(console.error);
       }
     };
 
-    this.peerConnection.oniceconnectionstatechange = () => {
-      console.log('ICE connection state:', this.peerConnection?.iceConnectionState);
-    };
-
-    this.peerConnection.onconnectionstatechange = () => {
-      console.log('Connection state:', this.peerConnection?.connectionState);
+    peerConnection.onconnectionstatechange = () => {
+      console.log(`WebRTC connection state for ${cameraId}:`, peerConnection.connectionState);
     };
 
     try {
       // Add transceivers for receiving
-      this.peerConnection.addTransceiver('video', { direction: 'recvonly' });
-      this.peerConnection.addTransceiver('audio', { direction: 'recvonly' });
+      peerConnection.addTransceiver('video', { direction: 'recvonly' });
+      peerConnection.addTransceiver('audio', { direction: 'recvonly' });
 
-      // Create offer
-      const offer = await this.peerConnection.createOffer();
-      console.log('Created offer:', offer.type);
+      // Create and send offer
+      const offer = await peerConnection.createOffer();
+      await peerConnection.setLocalDescription(offer);
+
+      const whepUrl = this.tokenService.getSecureWebRTCUrl(cameraId, streamInfo.accessToken);
       
-      await this.peerConnection.setLocalDescription(offer);
-      console.log('Set local description');
-
-      // Send offer to WHEP endpoint
-      console.log('Sending SDP offer to:', streamUrl);
-      const response = await fetch(streamUrl, {
+      const response = await fetch(whepUrl, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/sdp',
@@ -58,38 +59,30 @@ export class WebRTCService {
         body: offer.sdp
       });
 
-      console.log('Response status:', response.status, response.statusText);
-      
       if (!response.ok) {
-        const errorText = await response.text();
-        console.error('Server response:', errorText);
-        throw new Error(`HTTP ${response.status}: ${errorText}`);
+        throw new Error(`WebRTC connection failed: ${response.status}`);
       }
 
       const answerSdp = await response.text();
-      console.log('Received SDP answer:', answerSdp.substring(0, 100) + '...');
-
-      await this.peerConnection.setRemoteDescription({
+      await peerConnection.setRemoteDescription({
         type: 'answer',
         sdp: answerSdp
       });
 
-      console.log('WebRTC connection established successfully');
-
+      console.log(`WebRTC connected for ${cameraId}`);
     } catch (error) {
       console.error('WebRTC connection failed:', error);
-      this.stopStream();
-      throw error;
+      this.stopStream(cameraId);
     }
   }
 
-  stopStream(): void {
-    if (this.peerConnection) {
-      this.peerConnection.close();
-      this.peerConnection = null;
-      console.log('WebRTC connection closed');
+  stopStream(cameraId: string): void {
+    const peerConnection = this.peerConnections.get(cameraId);
+    if (peerConnection) {
+      peerConnection.close();
+      this.peerConnections.delete(cameraId);
     }
+    this.tokenService.cleanup(cameraId);
   }
-  
 
 }
