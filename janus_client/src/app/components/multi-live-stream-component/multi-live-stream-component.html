@@ -1,0 +1,20 @@
+<div class="grid-container">
+  <div *ngFor="let camera of cameras; let i = index" class="camera-tile">
+    <video
+      #videoElement
+      [id]="'video-' + camera.id"
+      autoplay
+      muted
+      playsinline
+      width="320"
+      height="180">
+    </video>
+    <div class="label">📹 {{ camera.id }}</div>
+  </div>
+</div>
+
+<div class="controls">
+  <button (click)="playAll()" [disabled]="isPlaying">▶️ Play All</button>
+  <button (click)="stopAll()" [disabled]="!isPlaying">⏹ Stop All</button>
+  <span class="status" *ngIf="status">{{ status }}</span>
+</div>

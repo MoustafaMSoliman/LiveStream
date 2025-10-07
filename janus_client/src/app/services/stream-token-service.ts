@@ -29,7 +29,7 @@ export interface RefreshTokenRequest {
   providedIn: 'root'
 }) 
 export class StreamTokenService {
-  private baseUrl = 'http://localhost:5000/api/stream';
+  private baseUrl = 'http://localhost:5046/api/stream';
   private activeStreams = new Map<string, BehaviorSubject<StreamInfo>>();
   private refreshTimers = new Map<string, any>();
 
@@ -86,9 +86,7 @@ export class StreamTokenService {
       cameraId
     };
     
-    this.http.post<TokenRefreshResponse>(`${this.baseUrl}/refresh`, {
-      request
-    })
+    this.http.post<TokenRefreshResponse>(`${this.baseUrl}/refresh`, request)
     .pipe(
       tap((response: TokenRefreshResponse) => {
         // Update the stream info with new token
@@ -115,7 +113,7 @@ export class StreamTokenService {
   }
 
   getSecureWebRTCUrl(cameraId: string, token: string): string {
-    return `http://localhost:8889/whep/${cameraId}?token=${token}`;
+    return `http://localhost:8889/${cameraId}/whep?token=${token}`;
   }
 
   getSecureHLSUrl(cameraId: string, token: string): string {

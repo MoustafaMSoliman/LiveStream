@@ -10,6 +10,7 @@ services:
       - "8554:8554"  # RTSP
       - "1935:1935"  # RTMP
       - "8888:8888"  # HLS
-      - "8889:8889"  # WebRTC
+      - "8889:8889"   # WebRTC (WHEP/WHIP)
+      - "8000-8200:8000-8200/udp"  # WebRTC ICE
       - "9997:9997"  # API
 

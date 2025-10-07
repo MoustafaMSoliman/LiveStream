@@ -1,6 +1,7 @@
 ﻿using LiveStream.APPLICATION.DTOs;
 using LiveStream.APPLICATION.Interfaces;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
 using System.Collections.Concurrent;
 using System.IdentityModel.Tokens.Jwt;
@@ -134,24 +135,33 @@ public class StreamTokenService
     private readonly string _secretKey;
     private readonly IConfiguration _configuration;
     private readonly Dictionary<string, DateTime> _usedTokens = new();
+    private readonly ILogger<StreamTokenService> _logger;
 
-    public StreamTokenService(IConfiguration configuration)
+    public StreamTokenService(IConfiguration configuration, ILogger<StreamTokenService> logger)
     {
         _configuration = configuration;
-        _secretKey = _configuration["Jwt:Secret"] ?? "your-super-secure-secret-key-32-chars-long";
+        _secretKey = _configuration["Jwt:SecretKey"] ?? "your-super-secure-secret-key-32-chars-long";
+        _logger = logger;
     }
 
     public TokenResponse GenerateTokens(string cameraId, string userId, string clientIp)
     {
-        var accessToken = GenerateToken(cameraId, userId, clientIp, TimeSpan.FromMinutes(5));
-        var refreshToken = GenerateToken(cameraId, userId, clientIp, TimeSpan.FromMinutes(60));
+        // Normalize IP for Docker environment
+        var normalizedIp = clientIp;
+        if (clientIp == "::1" || clientIp == "127.0.0.1")
+        {
+            normalizedIp = "172.18.0.1"; // Use Docker gateway IP
+        }
+
+        var accessToken = GenerateToken(cameraId, userId, normalizedIp, TimeSpan.FromMinutes(5));
+        var refreshToken = GenerateToken(cameraId, userId, normalizedIp, TimeSpan.FromMinutes(60));
 
         return new TokenResponse
         {
             AccessToken = accessToken,
             RefreshToken = refreshToken,
-            ExpiresIn = 300, // 5 minutes
-            RefreshExpiresIn = 3600 // 60 minutes
+            ExpiresIn = 300,
+            RefreshExpiresIn = 3600
         };
     }
 
@@ -184,6 +194,8 @@ public class StreamTokenService
     {
         try
         {
+            _logger.LogInformation($"Validating token for camera: {expectedCameraId}, IP from MediaMTX: {clientIp}");
+
             // Check if token was already used (prevent replay attacks)
             if (_usedTokens.ContainsKey(token))
                 return false;
@@ -205,28 +217,43 @@ public class StreamTokenService
             // Validate token type
             var tokenType = jwtToken.Claims.First(x => x.Type == "tokenType").Value;
             if (tokenType != "access")
+            {
+                _logger.LogWarning("Invalid token type");
                 return false;
+            }
 
             // Validate camera ID
             var tokenCameraId = jwtToken.Claims.First(x => x.Type == "cameraId").Value;
             if (tokenCameraId != expectedCameraId)
+            {
+                _logger.LogWarning($"Camera ID mismatch. Token: {tokenCameraId}, Expected: {expectedCameraId}");
                 return false;
+            }
 
-            // Validate IP address
+            // Validate IP address - handle Docker IP vs localhost
             var tokenClientIp = jwtToken.Claims.First(x => x.Type == "clientIp").Value;
-            if (tokenClientIp != clientIp)
+
+            // Allow both localhost and Docker internal IP
+            bool ipValid = tokenClientIp == clientIp ||
+                          (tokenClientIp == "::1" && clientIp == "172.18.0.1") ||
+                          (tokenClientIp == "127.0.0.1" && clientIp == "172.18.0.1");
+
+            if (!ipValid)
+            {
+                _logger.LogWarning($"IP mismatch. Token IP: {tokenClientIp}, MediaMTX IP: {clientIp}");
                 return false;
+            }
 
             // Mark token as used (one-time use)
             _usedTokens[token] = DateTime.UtcNow;
-
-            // Cleanup old tokens
             CleanupUsedTokens();
 
+            _logger.LogInformation("Token validation SUCCESS");
             return true;
         }
-        catch
+        catch (Exception ex)
         {
+            _logger.LogError(ex, "Token validation ERROR");
             return false;
         }
     }

@@ -5,22 +5,22 @@ apiAddress: :9997
 
 
 # Authentication - FIXED PERMISSIONS
-authInternalUsers:
-  - user: publisher
-    pass: ptest
-    permissions:
-      - action: publish
-    
-  - user: viewer
-    pass: vtest 
-    permissions:
-      - action: read
-    
-  - user: admin
-    pass: atest
-    permissions:
-      - action: publish
-      - action: read
+#authInternalUsers:
+#  - user: publisher
+#    pass: ptest
+#    permissions:
+#      - action: publish
+#    
+#  - user: viewer
+#    pass: vtest 
+#    permissions:
+#      - action: read
+#    
+#  - user: admin
+#    pass: atest
+#    permissions:
+#      - action: publish
+#      - action: read
 
 
 # IP-based restrictions
@@ -30,6 +30,10 @@ authInternalUsers:
 # RTSP Configuration
 rtspAddress: :8554
 rtspTransports: [tcp, udp]
+#rtspReadTimeout: 60s
+#rtspWriteTimeout: 60s
+writeQueueSize: 2048
+
 
 # RTMP Configuration
 rtmpAddress: :1935
@@ -41,14 +45,88 @@ hlsAddress: :8888
 webrtcAddress: :8889
 #webrtcAllowOrigin: "*"
 
-externalAuthenticationURL: http://host.docker.internal:5000/api/stream/validate-token     
+authMethod: http
+authHTTPAddress: http://host.docker.internal:5046/api/stream/validate-token
+
+authInternalUsers: []
+
+# Enable JWT token support in query parameters
+authJWTInHTTPQuery: true
+   
+
+
+
 # Example path configuration for a camera
+# Path configurations
 paths:
 
   cam1:
     source: rtsp://170.93.143.139/rtplive/470011e600ef003a004ee33696235daa
-    sourceOnDemand: yes  # Only pull when client connects
+    sourceOnDemand: yes
 
   cam2:
     source: rtsp://170.93.143.139/rtplive/470011e600ef003a004ee33696235daa
-    sourceOnDemand: yes  # Only pull when client connects
+    sourceOnDemand: yes
+    rtspTransport: tcp
+    runOnDemandRestart: yes
+    runOnDemandCloseAfter: 30s
+    #readTimeout: 60s
+    #writeTimeout: 60s
+    
+  cam3:
+    source: http://158.58.130.148/mjpg/video.mjpg
+    sourceOnDemand: yes
+    
+  cam4:
+    source: rtsp://170.93.143.139/rtplive/470011e600ef003a004ee33696235daa
+    sourceOnDemand: yes
+    
+  cam5:
+    source: https://webcam.rhein-taunus-krematorium.de:8081/mjpg/video.mjpg
+    sourceOnDemand: yes
+    sourceFingerprint: any   
+    
+  cam6:
+    source: http://158.58.130.148/mjpg/video.mjpg
+    sourceOnDemand: yes
+    
+  cam7:
+    source: rtsp://170.93.143.139/rtplive/470011e600ef003a004ee33696235daa
+    sourceOnDemand: yes
+    
+  cam8:
+    source: rtsp://170.93.143.139/rtplive/470011e600ef003a004ee33696235daa
+    sourceOnDemand: yes
+    
+  cam9:
+    source: rtsp://170.93.143.139/rtplive/470011e600ef003a004ee33696235daa
+    sourceOnDemand: yes
+    
+  cam10:
+    source: rtsp://170.93.143.139/rtplive/470011e600ef003a004ee33696235daa
+    sourceOnDemand: yes
+    
+  cam11:
+    source: rtsp://170.93.143.139/rtplive/470011e600ef003a004ee33696235daa
+    sourceOnDemand: yes
+    
+  cam12:
+    source: rtsp://170.93.143.139/rtplive/470011e600ef003a004ee33696235daa
+    sourceOnDemand: yes
+    
+  cam13:
+    source: https://webcam.rhein-taunus-krematorium.de:8081/mjpg/video.mjpg
+    sourceOnDemand: yes
+    
+  cam14:
+    source: rtsp://170.93.143.139/rtplive/470011e600ef003a004ee33696235daa
+    sourceOnDemand: yes
+    
+  cam15:
+    source: rtsp://170.93.143.139/rtplive/470011e600ef003a004ee33696235daa
+    sourceOnDemand: yes
+    
+  cam16:
+    source: https://webcam.rhein-taunus-krematorium.de:8081/mjpg/video.mjpg
+    sourceOnDemand: yes
+    sourceFingerprint: any
