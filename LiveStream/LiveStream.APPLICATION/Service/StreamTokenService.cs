@@ -240,9 +240,9 @@ public class StreamTokenService
 
             if (!ipValid)
             {
-                _logger.LogWarning($"IP mismatch. Token IP: {tokenClientIp}, MediaMTX IP: {clientIp}");
-                return false;
+                _logger.LogWarning($"⚠️ Ignoring IP mismatch for internal Docker communication. Token IP: {tokenClientIp}, MediaMTX IP: {clientIp}");
             }
+
 
             // Mark token as used (one-time use)
             _usedTokens[token] = DateTime.UtcNow;

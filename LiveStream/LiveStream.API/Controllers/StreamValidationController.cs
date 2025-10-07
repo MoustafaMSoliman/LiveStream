@@ -14,7 +14,7 @@ namespace LiveStream.API.Controllers
 {
     [ApiController]
     [Route("api/stream")]
-    
+
     public class StreamValidationController : ControllerBase
     {
         private readonly StreamTokenService _streamTokenService;
@@ -388,7 +388,7 @@ namespace LiveStream.API.Controllers
                 return Unauthorized();
             }
         }
-       
-        
+
+
     }
 }

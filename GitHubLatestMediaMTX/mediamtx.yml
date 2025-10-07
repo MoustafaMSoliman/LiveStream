@@ -1,0 +1,147 @@
+# API Configuration
+
+api: yes
+apiAddress: :9997
+
+
+# Authentication - FIXED PERMISSIONS
+#authInternalUsers:
+#  - user: publisher
+#    pass: ptest
+#    permissions:
+#      - action: publish
+#    
+#  - user: viewer
+#    pass: vtest 
+#    permissions:
+#      - action: read
+#    
+#  - user: admin
+#    pass: atest
+#    permissions:
+#      - action: publish
+#      - action: read
+
+
+# IP-based restrictions
+#readIPs: [192.168.1.0/24, 10.0.0.0/8]
+#publishIPs: [192.168.1.100]  # Only specific cameras can publish
+
+# RTSP Configuration
+rtspAddress: :8554
+rtspTransports: [tcp, udp]
+#rtspReadTimeout: 60s
+#rtspWriteTimeout: 60s
+writeQueueSize: 2048
+#rtsp:
+#  listenAddress: 8554
+#  readTimeout: 60s
+#  writeTimeout: 60s
+#  keepalivePeriod : 15s
+#  readBufferCount: 2048
+
+# RTMP Configuration
+rtmpAddress: :1935
+#rtmp:
+#  listenAddress: 1935
+  
+# HLS Configuration
+hlsAddress: :8888
+#hls:
+#  listenAddress: 8888
+
+# WebRTC Configuration (WHIP/WHEP)
+webrtcAddress: :8889
+#webrtc:
+#  listenAddress: 8889
+#  iceServers: []
+#webrtcAllowOrigin: "*"
+
+authMethod: http
+authHTTPAddress: http://host.docker.internal:5046/api/stream/validate-token
+
+authInternalUsers: []
+
+# Enable JWT token support in query parameters
+authJWTInHTTPQuery: true
+   
+
+
+
+# Example path configuration for a camera
+# Path configurations
+paths:
+  all:
+    # حاول تعيد الاتصال تلقائيًا لو الـ source وقف
+    
+    sourceOnDemandStartTimeout: 30s
+    sourceOnDemandCloseAfter: 0s
+    #sourceCloseAfter: 0s
+    runOnDemandRestart: yes
+
+  cam1:
+    source: http://pendelcam.kip.uni-heidelberg.de/mjpg/video.mjpg
+    sourceOnDemand: yes
+
+  cam2:
+    source: rtsp://170.93.143.139/rtplive/470011e600ef003a004ee33696235daa
+    sourceOnDemand: yes
+
+  cam3:
+    source: http://158.58.130.148/mjpg/video.mjpg
+    sourceOnDemand: yes
+
+  cam4:
+    source: rtsp://170.93.143.139/rtplive/470011e600ef003a004ee33696235daa
+    sourceOnDemand: yes
+
+  cam5:
+    source: https://webcam.rhein-taunus-krematorium.de:8081/mjpg/video.mjpg
+    sourceOnDemand: yes
+    sourceFingerprint: any   
+
+  cam6:
+    source: http://158.58.130.148/mjpg/video.mjpg
+    sourceOnDemand: yes
+
+  cam7:
+    source: rtsp://170.93.143.139/rtplive/470011e600ef003a004ee33696235daa
+    sourceOnDemand: yes
+
+  cam8:
+    source: rtsp://170.93.143.139/rtplive/470011e600ef003a004ee33696235daa
+    sourceOnDemand: yes
+
+  cam9:
+    source: rtsp://170.93.143.139/rtplive/470011e600ef003a004ee33696235daa
+    sourceOnDemand: yes
+
+  cam10:
+    source: rtsp://170.93.143.139/rtplive/470011e600ef003a004ee33696235daa
+    sourceOnDemand: yes
+
+  cam11:
+    source: rtsp://170.93.143.139/rtplive/470011e600ef003a004ee33696235daa
+    sourceOnDemand: yes
+
+  cam12:
+    source: rtsp://170.93.143.139/rtplive/470011e600ef003a004ee33696235daa
+    sourceOnDemand: yes
+
+  cam13:
+    source: https://webcam.rhein-taunus-krematorium.de:8081/mjpg/video.mjpg
+    sourceOnDemand: yes
+    sourceFingerprint: any
+
+  cam14:
+    source: rtsp://170.93.143.139/rtplive/470011e600ef003a004ee33696235daa
+    sourceOnDemand: yes
+
+  cam15:
+    source: rtsp://170.93.143.139/rtplive/470011e600ef003a004ee33696235daa
+    sourceOnDemand: yes
+
+  cam16:
+    source: https://webcam.rhein-taunus-krematorium.de:8081/mjpg/video.mjpg
+    sourceOnDemand: yes
+    sourceFingerprint: any
