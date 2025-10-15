@@ -1,6 +1,7 @@
 services:
   mediamtx:
-    image: bluenviron/mediamtx:1.15.1
+    #image: bluenviron/mediamtx:1.23.1
+    build: .
     container_name: smediamtx
     restart: unless-stopped
     volumes:

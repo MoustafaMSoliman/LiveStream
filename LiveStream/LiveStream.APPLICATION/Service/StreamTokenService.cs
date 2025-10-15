@@ -153,14 +153,14 @@ public class StreamTokenService
             normalizedIp = "172.18.0.1"; // Use Docker gateway IP
         }
 
-        var accessToken = GenerateToken(cameraId, userId, normalizedIp, TimeSpan.FromMinutes(5));
+        var accessToken = GenerateToken(cameraId, userId, normalizedIp, TimeSpan.FromMinutes(2));
         var refreshToken = GenerateToken(cameraId, userId, normalizedIp, TimeSpan.FromMinutes(60));
 
         return new TokenResponse
         {
             AccessToken = accessToken,
             RefreshToken = refreshToken,
-            ExpiresIn = 300,
+            ExpiresIn = 120,
             RefreshExpiresIn = 3600
         };
     }
@@ -177,7 +177,7 @@ public class StreamTokenService
                 new Claim("cameraId", cameraId),
                 new Claim("userId", userId),
                 new Claim("clientIp", clientIp),
-                new Claim("tokenType", validity.TotalMinutes == 5 ? "access" : "refresh"),
+                new Claim("tokenType", validity.TotalMinutes == 2 ? "access" : "refresh"),
                 new Claim("exp", DateTimeOffset.UtcNow.Add(validity).ToUnixTimeSeconds().ToString())
             }),
             Expires = DateTime.UtcNow.Add(validity),

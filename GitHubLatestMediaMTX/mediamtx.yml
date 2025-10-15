@@ -32,7 +32,7 @@ rtspAddress: :8554
 rtspTransports: [tcp, udp]
 #rtspReadTimeout: 60s
 #rtspWriteTimeout: 60s
-writeQueueSize: 2048
+#writeQueueSize: 2048
 #rtsp:
 #  listenAddress: 8554
 #  readTimeout: 60s
@@ -80,8 +80,10 @@ paths:
     runOnDemandRestart: yes
 
   cam1:
-    source: http://pendelcam.kip.uni-heidelberg.de/mjpg/video.mjpg
+    source: rtsp://170.93.143.139/rtplive/470011e600ef003a004ee33696235daa
     sourceOnDemand: yes
+    #rtspTransport: udp
+    #readTimeout: 20s  # Increase timeout
 
   cam2:
     source: rtsp://170.93.143.139/rtplive/470011e600ef003a004ee33696235daa

@@ -17,6 +17,66 @@ webrtcAddress: :8889
 
 # Example path configuration for a camera
 paths:
-  cam1:
+   cam1:
+    source: rtsp://170.93.143.139/rtplive/470011e600ef003a004ee33696235daa
+    sourceOnDemand: yes  # Only pull the stream when a client is watching:cite[2]
+    
+   cam2:
+    source: rtsp://170.93.143.139/rtplive/470011e600ef003a004ee33696235daa
+    sourceOnDemand: yes  # Only pull the stream when a client is watching:cite[2]
+    
+    cam3:
+    source: rtsp://170.93.143.139/rtplive/470011e600ef003a004ee33696235daa
+    sourceOnDemand: yes  # Only pull the stream when a client is watching:cite[2]
+    
+    cam4:
+    source: rtsp://170.93.143.139/rtplive/470011e600ef003a004ee33696235daa
+    sourceOnDemand: yes  # Only pull the stream when a client is watching:cite[2]
+    
+    cam5:
+    source: rtsp://170.93.143.139/rtplive/470011e600ef003a004ee33696235daa
+    sourceOnDemand: yes  # Only pull the stream when a client is watching:cite[2]
+    
+    cam6:
+    source: rtsp://170.93.143.139/rtplive/470011e600ef003a004ee33696235daa
+    sourceOnDemand: yes  # Only pull the stream when a client is watching:cite[2]
+    
+    cam7:
+    source: rtsp://170.93.143.139/rtplive/470011e600ef003a004ee33696235daa
+    sourceOnDemand: yes  # Only pull the stream when a client is watching:cite[2]
+    
+    cam8:
+    source: rtsp://170.93.143.139/rtplive/470011e600ef003a004ee33696235daa
+    sourceOnDemand: yes  # Only pull the stream when a client is watching:cite[2]
+    
+    cam9:
+    source: rtsp://170.93.143.139/rtplive/470011e600ef003a004ee33696235daa
+    sourceOnDemand: yes  # Only pull the stream when a client is watching:cite[2]
+    
+    cam10:
+    source: rtsp://170.93.143.139/rtplive/470011e600ef003a004ee33696235daa
+    sourceOnDemand: yes  # Only pull the stream when a client is watching:cite[2]
+    
+    cam11:
+    source: rtsp://170.93.143.139/rtplive/470011e600ef003a004ee33696235daa
+    sourceOnDemand: yes  # Only pull the stream when a client is watching:cite[2]
+    
+    cam12:
+    source: rtsp://170.93.143.139/rtplive/470011e600ef003a004ee33696235daa
+    sourceOnDemand: yes  # Only pull the stream when a client is watching:cite[2]
+    
+    cam13:
+    source: rtsp://170.93.143.139/rtplive/470011e600ef003a004ee33696235daa
+    sourceOnDemand: yes  # Only pull the stream when a client is watching:cite[2]
+    
+    cam14:
+    source: rtsp://170.93.143.139/rtplive/470011e600ef003a004ee33696235daa
+    sourceOnDemand: yes  # Only pull the stream when a client is watching:cite[2]
+    
+    cam15:
+    source: rtsp://170.93.143.139/rtplive/470011e600ef003a004ee33696235daa
+    sourceOnDemand: yes  # Only pull the stream when a client is watching:cite[2]
+    
+    cam16:
     source: rtsp://170.93.143.139/rtplive/470011e600ef003a004ee33696235daa
     sourceOnDemand: yes  # Only pull the stream when a client is watching:cite[2]
