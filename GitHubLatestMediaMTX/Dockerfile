@@ -1,31 +1,39 @@
-# ---------- مرحلة البناء ----------
+# ======================
+# Stage 1: Build Stage
+# ======================
 FROM golang:1.25 AS builder
+
+# Install dependencies
+RUN apt-get update && apt-get install -y git build-essential && rm -rf /var/lib/apt/lists/*
+
+# Set working directory inside container
+WORKDIR /app
+
+# Copy local MediaMTX source from the subfolder
+COPY ./mediamtx ./
+
+# Ensure VERSION file exists (some builds depend on it)
+RUN echo "1.0.0" > VERSION
+
+# Fetch dependencies and build
+RUN go mod download
+RUN go build -o mediamtx .
+
+# ======================
+# Stage 2: Runtime Stage
+# ======================
+FROM debian:bookworm-slim
+
+# Optional: install ffmpeg or other runtime tools
+RUN apt-get update && apt-get install -y ffmpeg && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app
 
-# نثبت الأدوات المطلوبة للبناء
-RUN apt-get update && apt-get install -y make git bash curl && rm -rf /var/lib/apt/lists/*
-
-# نسحب أحدث نسخة من المشروع من GitHub
-RUN git clone https://github.com/bluenviron/mediamtx.git .
-
-# نتحقق من أحدث tag أو commit
-RUN git fetch --all && git checkout $(git describe --tags $(git rev-list --tags --max-count=1))
-
-# نبني الملف التنفيذي الرسمي
-RUN make mediamtx
-
-# ---------- مرحلة التشغيل ----------
-FROM debian:bookworm-slim
-
-# نضيف أدوات مساعدة اختيارية
-RUN apt-get update && apt-get install -y bash curl && rm -rf /var/lib/apt/lists/*
-
-# ننسخ الملف التنفيذي النهائي فقط
+# Copy built binary + config
 COPY --from=builder /app/mediamtx /usr/local/bin/mediamtx
+COPY ./mediamtx/mediamtx.yml /app/mediamtx.yml
 
-# نحدد نقطة التشغيل
-ENTRYPOINT ["/usr/local/bin/mediamtx"]
+# Expose ports (RTSP, HTTP, RTMP, API)
+EXPOSE 8554 8888 1935 9997
 
-# نستخدم config خارجي (تقدر تغيّره عند التشغيل)
-CMD ["/mediamtx.yml"]
+CMD ["/usr/local/bin/mediamtx", "/app/mediamtx.yml"]
