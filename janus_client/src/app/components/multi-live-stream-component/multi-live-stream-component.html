@@ -6,6 +6,7 @@
       autoplay
       muted
       playsinline
+      controls
       width="320"
       height="180">
     </video>
@@ -16,5 +17,8 @@
 <div class="controls">
   <button (click)="playAll()" [disabled]="isPlaying">▶️ Play All</button>
   <button (click)="stopAll()" [disabled]="!isPlaying">⏹ Stop All</button>
+ 
+  
+  <button (click)="getAllCameras()">Get All Cameras</button>
   <span class="status" *ngIf="status">{{ status }}</span>
 </div>

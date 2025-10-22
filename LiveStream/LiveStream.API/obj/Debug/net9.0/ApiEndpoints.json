@@ -1,5 +1,68 @@
 [
   {
+    "ContainingType": "LiveStream.API.Controllers.CamerasController",
+    "Method": "AddCamera",
+    "RelativePath": "api/Cameras/add/{cameraName}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "cameraName",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "request",
+        "Type": "LiveStream.API.Controllers.AddCameraRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "LiveStream.API.Controllers.CamerasController",
+    "Method": "GetCamera",
+    "RelativePath": "api/Cameras/get/{cameraName}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "cameraName",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "LiveStream.API.Controllers.CamerasController",
+    "Method": "GetAllCameras",
+    "RelativePath": "api/Cameras/list",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "LiveStream.API.Controllers.CamerasController",
+    "Method": "RemoveCamera",
+    "RelativePath": "api/Cameras/remove/{cameraName}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "cameraName",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "LiveStream.API.Controllers.LiveStreamController",
     "Method": "GetCameraInfo",
     "RelativePath": "api/LiveStream/{cameraId}/info",

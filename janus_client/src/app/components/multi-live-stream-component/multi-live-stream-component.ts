@@ -1,6 +1,7 @@
 import { Component, ElementRef, OnDestroy, OnInit, QueryList, ViewChildren } from '@angular/core';
 import { WebRTCService } from '../../services/web-rtc-service';
 import { NgFor, NgIf } from '@angular/common';
+import { CameraService } from '../../services/camera-service';
 
 @Component({
   selector: 'app-multi-live-stream-component',
@@ -15,7 +16,7 @@ export class MultiLiveStreamComponent implements OnInit, OnDestroy {
   isPlaying = false;
   status = '';
 
-  constructor(private webrtcService: WebRTCService) {}
+  constructor(private webrtcService: WebRTCService, private cameraService:CameraService) {}
 
   ngOnInit() {
     this.status = 'Ready to play 16 streams.';
@@ -50,6 +51,16 @@ export class MultiLiveStreamComponent implements OnInit, OnDestroy {
     this.isPlaying = false;
     this.status = 'All streams stopped';
   }
+
+/*addCamera(cameraName: string, source: string) {
+  return this.cameraService.addCamera(cameraName,source);
+  
+}*/
+
+getAllCameras() {
+  return this.cameraService.getAllCameras();
+}
+
 
   ngOnDestroy(): void {
     this.stopAll();

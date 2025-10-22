@@ -23,7 +23,26 @@ export class WebRTCService {
 
   private async startWebRTCConnection(cameraId: string, streamInfo: StreamInfo, videoElement: HTMLVideoElement): Promise<void> {
     const peerConnection = new RTCPeerConnection({
-      iceServers: [{ urls: 'stun:stun.l.google.com:19302' }]
+        iceServers: [
+            // STUN servers - للاتصالات المباشرة
+            { urls: 'stun:62.241.148.115:3478' },
+            //{ urls: 'stun:stun.l.google.com:19302' }, // احتياطي
+            
+            // TURN servers - للشبكات المقيدة
+            { 
+                urls: 'turn:62.241.148.115:3478',
+                username: 'mediamtx',
+                credential: 'your-strong-password-123'
+            },
+            { 
+                urls: 'turns:62.241.148.115:5349',
+                username: 'mediamtx',
+                credential: 'your-strong-password-123'
+            }
+        ],
+        iceTransportPolicy: 'all', // أو 'relay' للأمان الأعلى
+        bundlePolicy: 'max-bundle',
+        rtcpMuxPolicy: 'require'
     });
 
     this.peerConnections.set(cameraId, peerConnection);

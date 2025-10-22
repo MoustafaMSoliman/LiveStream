@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  coturn:
+    build: .
+    container_name: coturn-server
+    restart: unless-stopped
+    ports:
+      - "3478:3478"
+      - "3478:3478/udp"
+      - "5349:5349"
+      - "60000:60100/udp"
+    #volumes:
+    #  - ./logs:/var/log/coturn
+    environment:
+      - TURN_EXTERNAL_IP=62.241.148.115
+    networks:
+      - coturn-net
+
+networks:
+  coturn-net:
+    driver: bridge

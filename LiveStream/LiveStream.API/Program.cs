@@ -103,6 +103,7 @@ builder.Services.AddHttpClient("mediamtx", c =>
 });
 
 builder.Services.AddScoped<IJanusService, JanusService>();
+builder.Services.AddHttpClient<IMediaMtxService, MediaMtxService>();
 builder.Services.AddSingleton<StreamTokenService>();
 builder.Services.AddAuthentication();
 
