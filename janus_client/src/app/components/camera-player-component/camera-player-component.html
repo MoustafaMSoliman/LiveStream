@@ -26,11 +26,25 @@
       </div>
       <div *ngIf="error" class="error">{{ error }}</div>
 </div>-->
-<div class="video-container">
-      <video #videoElement controls width="800" height="450" autoplay></video>
-      <div class="controls">
-        <button (click)="play()" [disabled]="isPlaying">Play Stream</button>
-        <button (click)="stop()" [disabled]="!isPlaying">Stop Stream</button>
-        <span class="status" *ngIf="status">{{ status }}</span>
-      </div>
-    </div>
+<div class="camera-player">
+  <div class="controls">
+    <select [ngModel]="streamMode" (ngModelChange)="streamMode = $event">
+      <option value="webrtc">WebRTC</option>
+      <option value="hls">HLS</option>
+    </select>
+    <button (click)="play()" [disabled]="isPlaying">▶️ Play</button>
+    <button (click)="stop()" [disabled]="!isPlaying">⏹ Stop</button>
+  </div>
+
+  <video
+    #videoElement
+    width="320"
+    height="180"
+    controls
+    autoplay
+    muted
+    playsinline>
+  </video>
+
+  <div *ngIf="error" class="error">{{ error }}</div>
+</div>

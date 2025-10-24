@@ -272,7 +272,7 @@ namespace LiveStream.API.Controllers
                     };
 
                     authRequest = JsonSerializer.Deserialize<MediaMTXAuthRequest>(body, options);
-
+                    if (authRequest.Protocol == "hls") return Ok();
                     if (authRequest != null)
                     {
                         _logger.LogInformation("✅ Direct deserialization successful");

@@ -52,7 +52,7 @@
               "RelativeDocumentMoniker": "LiveStream.API\\Controllers\\StreamValidationController.cs",
               "ToolTip": "D:\\LiveStream\\LiveStream\\LiveStream.API\\Controllers\\StreamValidationController.cs",
               "RelativeToolTip": "LiveStream.API\\Controllers\\StreamValidationController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEBAAA8AAAAAAAAAA==",
+              "ViewState": "AgIAAAQBAAAAAAAAAAAIwBIBAABDAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-21T14:19:12.899Z",
               "EditorCaption": ""
@@ -91,7 +91,8 @@
               "RelativeToolTip": "LiveStream.APPLICATION\\Service\\MediaMtxService.cs",
               "ViewState": "AgIAAIkAAAAAAAAAAAAswKAAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-18T12:35:34.511Z"
+              "WhenOpened": "2025-10-18T12:35:34.511Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",

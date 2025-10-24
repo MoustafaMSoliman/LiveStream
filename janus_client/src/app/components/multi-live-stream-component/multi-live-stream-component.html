@@ -1,3 +1,17 @@
+<div class="toolbar">
+  <label>Stream Mode:</label>
+  <select [(ngModel)]="streamMode">
+    <option value="webrtc">WebRTC</option>
+    <option value="hls">HLS</option>
+  </select>
+
+  <button (click)="playAll()" [disabled]="isPlaying">▶️ Play All</button>
+  <button (click)="stopAll()" [disabled]="!isPlaying">⏹ Stop All</button>
+
+  <button (click)="getAllCameras()">📡 Refresh Cameras</button>
+  <span class="status" *ngIf="status">{{ status }}</span>
+</div>
+
 <div class="grid-container">
   <div *ngFor="let camera of cameras; let i = index" class="camera-tile">
     <video
@@ -12,13 +26,4 @@
     </video>
     <div class="label">📹 {{ camera.id }}</div>
   </div>
-</div>
-
-<div class="controls">
-  <button (click)="playAll()" [disabled]="isPlaying">▶️ Play All</button>
-  <button (click)="stopAll()" [disabled]="!isPlaying">⏹ Stop All</button>
- 
-  
-  <button (click)="getAllCameras()">Get All Cameras</button>
-  <span class="status" *ngIf="status">{{ status }}</span>
 </div>

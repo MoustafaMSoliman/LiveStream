@@ -52,7 +52,7 @@
               "RelativeDocumentMoniker": "LiveStream.API\\Controllers\\StreamValidationController.cs",
               "ToolTip": "D:\\LiveStream\\LiveStream\\LiveStream.API\\Controllers\\StreamValidationController.cs",
               "RelativeToolTip": "LiveStream.API\\Controllers\\StreamValidationController.cs",
-              "ViewState": "AgIAAPgAAAAAAAAAAAAIwBEBAAA8AAAAAAAAAA==",
+              "ViewState": "AgIAAAQBAAAAAAAAAAAIwBIBAABDAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-21T14:19:12.899Z",
               "EditorCaption": ""
@@ -67,8 +67,7 @@
               "RelativeToolTip": "LiveStream.API\\Controllers\\LiveStreamController.cs",
               "ViewState": "AgIAABUAAAAAAAAAAAAowAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-21T14:25:53.252Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-21T14:25:53.252Z"
             },
             {
               "$type": "Document",
@@ -80,8 +79,7 @@
               "RelativeToolTip": "LiveStream.APPLICATION\\DTOs\\SourceConverter.cs",
               "ViewState": "AgIAABwAAAAAAAAAAAAcwDMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-19T07:12:35.231Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-19T07:12:35.231Z"
             },
             {
               "$type": "Document",

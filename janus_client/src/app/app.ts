@@ -1,17 +1,14 @@
-import { Component, signal } from '@angular/core';
-import { CameraPlayerComponent } from './components/camera-player-component/camera-player-component';
-import { JanusStream } from './components/janus-stream/janus-stream';
+import { Component } from '@angular/core';
 import { MultiLiveStreamComponent } from './components/multi-live-stream-component/multi-live-stream-component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [
-    //CameraPlayerComponent, 
-    MultiLiveStreamComponent],
+  imports: [MultiLiveStreamComponent],
   templateUrl: './app.html',
-  styleUrl: './app.css'
+  styleUrls: ['./app.css']
 })
-export class App {
-  protected readonly title = signal('janus_client');
+export class AppComponent {
+  title = 'Camera Monitoring Dashboard';
+new: any;
 }
