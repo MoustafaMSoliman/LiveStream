@@ -3,36 +3,20 @@
   "WorkspaceRootPath": "D:\\LiveStream\\LiveStream\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1C81DF0F-0AF6-4A5A-811E-CE93013D70D4}|LiveStream.API\\LiveStream.API.csproj|d:\\livestream\\livestream\\livestream.api\\controllers\\streamvalidationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1C81DF0F-0AF6-4A5A-811E-CE93013D70D4}|LiveStream.API\\LiveStream.API.csproj|solutionrelative:livestream.api\\controllers\\streamvalidationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1C81DF0F-0AF6-4A5A-811E-CE93013D70D4}|LiveStream.API\\LiveStream.API.csproj|d:\\livestream\\livestream\\livestream.api\\controllers\\livestreamcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1C81DF0F-0AF6-4A5A-811E-CE93013D70D4}|LiveStream.API\\LiveStream.API.csproj|solutionrelative:livestream.api\\controllers\\livestreamcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE5A1EFF-011F-40F4-838F-1DEE37A18176}|LiveStream.APPLICATION\\LiveStream.APPLICATION.csproj|d:\\livestream\\livestream\\livestream.application\\dtos\\sourceconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE5A1EFF-011F-40F4-838F-1DEE37A18176}|LiveStream.APPLICATION\\LiveStream.APPLICATION.csproj|solutionrelative:livestream.application\\dtos\\sourceconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{DE5A1EFF-011F-40F4-838F-1DEE37A18176}|LiveStream.APPLICATION\\LiveStream.APPLICATION.csproj|d:\\livestream\\livestream\\livestream.application\\service\\mediamtxservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DE5A1EFF-011F-40F4-838F-1DEE37A18176}|LiveStream.APPLICATION\\LiveStream.APPLICATION.csproj|solutionrelative:livestream.application\\service\\mediamtxservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DE5A1EFF-011F-40F4-838F-1DEE37A18176}|LiveStream.APPLICATION\\LiveStream.APPLICATION.csproj|d:\\livestream\\livestream\\livestream.application\\dtos\\mediamtxpathitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE5A1EFF-011F-40F4-838F-1DEE37A18176}|LiveStream.APPLICATION\\LiveStream.APPLICATION.csproj|solutionrelative:livestream.application\\dtos\\mediamtxpathitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1C81DF0F-0AF6-4A5A-811E-CE93013D70D4}|LiveStream.API\\LiveStream.API.csproj|d:\\livestream\\livestream\\livestream.api\\controllers\\streamvalidationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1C81DF0F-0AF6-4A5A-811E-CE93013D70D4}|LiveStream.API\\LiveStream.API.csproj|solutionrelative:livestream.api\\controllers\\streamvalidationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DE5A1EFF-011F-40F4-838F-1DEE37A18176}|LiveStream.APPLICATION\\LiveStream.APPLICATION.csproj|d:\\livestream\\livestream\\livestream.application\\dtos\\mediamtxpathlistresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE5A1EFF-011F-40F4-838F-1DEE37A18176}|LiveStream.APPLICATION\\LiveStream.APPLICATION.csproj|solutionrelative:livestream.application\\dtos\\mediamtxpathlistresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DE5A1EFF-011F-40F4-838F-1DEE37A18176}|LiveStream.APPLICATION\\LiveStream.APPLICATION.csproj|d:\\livestream\\livestream\\livestream.application\\service\\streamtokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE5A1EFF-011F-40F4-838F-1DEE37A18176}|LiveStream.APPLICATION\\LiveStream.APPLICATION.csproj|solutionrelative:livestream.application\\service\\streamtokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{814158B5-254D-4DA0-8450-539D752ECBE8}|LiveStream.DOMAIN\\LiveStream.DOMAIN.csproj|d:\\livestream\\livestream\\livestream.domain\\mediamtx\\mediamtxpath.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{814158B5-254D-4DA0-8450-539D752ECBE8}|LiveStream.DOMAIN\\LiveStream.DOMAIN.csproj|solutionrelative:livestream.domain\\mediamtx\\mediamtxpath.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE5A1EFF-011F-40F4-838F-1DEE37A18176}|LiveStream.APPLICATION\\LiveStream.APPLICATION.csproj|d:\\livestream\\livestream\\livestream.application\\interfaces\\imediamtxservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE5A1EFF-011F-40F4-838F-1DEE37A18176}|LiveStream.APPLICATION\\LiveStream.APPLICATION.csproj|solutionrelative:livestream.application\\interfaces\\imediamtxservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1C81DF0F-0AF6-4A5A-811E-CE93013D70D4}|LiveStream.API\\LiveStream.API.csproj|d:\\livestream\\livestream\\livestream.api\\controllers\\camerascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1C81DF0F-0AF6-4A5A-811E-CE93013D70D4}|LiveStream.API\\LiveStream.API.csproj|solutionrelative:livestream.api\\controllers\\camerascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,105 +26,59 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
+              "Title": "StreamTokenService.cs",
+              "DocumentMoniker": "D:\\LiveStream\\LiveStream\\LiveStream.APPLICATION\\Service\\StreamTokenService.cs",
+              "RelativeDocumentMoniker": "LiveStream.APPLICATION\\Service\\StreamTokenService.cs",
+              "ToolTip": "D:\\LiveStream\\LiveStream\\LiveStream.APPLICATION\\Service\\StreamTokenService.cs",
+              "RelativeToolTip": "LiveStream.APPLICATION\\Service\\StreamTokenService.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAewJIAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-02T14:50:24.751Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CamerasController.cs",
+              "DocumentMoniker": "D:\\LiveStream\\LiveStream\\LiveStream.API\\Controllers\\CamerasController.cs",
+              "RelativeDocumentMoniker": "LiveStream.API\\Controllers\\CamerasController.cs",
+              "ToolTip": "D:\\LiveStream\\LiveStream\\LiveStream.API\\Controllers\\CamerasController.cs",
+              "RelativeToolTip": "LiveStream.API\\Controllers\\CamerasController.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAQwCMAAAA+AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-02T14:30:32.087Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "StreamValidationController.cs",
               "DocumentMoniker": "D:\\LiveStream\\LiveStream\\LiveStream.API\\Controllers\\StreamValidationController.cs",
               "RelativeDocumentMoniker": "LiveStream.API\\Controllers\\StreamValidationController.cs",
               "ToolTip": "D:\\LiveStream\\LiveStream\\LiveStream.API\\Controllers\\StreamValidationController.cs",
               "RelativeToolTip": "LiveStream.API\\Controllers\\StreamValidationController.cs",
-              "ViewState": "AgIAAAQBAAAAAAAAAAAIwBIBAABDAAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAADEAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-21T14:19:12.899Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "LiveStreamController.cs",
-              "DocumentMoniker": "D:\\LiveStream\\LiveStream\\LiveStream.API\\Controllers\\LiveStreamController.cs",
-              "RelativeDocumentMoniker": "LiveStream.API\\Controllers\\LiveStreamController.cs",
-              "ToolTip": "D:\\LiveStream\\LiveStream\\LiveStream.API\\Controllers\\LiveStreamController.cs",
-              "RelativeToolTip": "LiveStream.API\\Controllers\\LiveStreamController.cs",
-              "ViewState": "AgIAABUAAAAAAAAAAAAowAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-21T14:25:53.252Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "SourceConverter.cs",
-              "DocumentMoniker": "D:\\LiveStream\\LiveStream\\LiveStream.APPLICATION\\DTOs\\SourceConverter.cs",
-              "RelativeDocumentMoniker": "LiveStream.APPLICATION\\DTOs\\SourceConverter.cs",
-              "ToolTip": "D:\\LiveStream\\LiveStream\\LiveStream.APPLICATION\\DTOs\\SourceConverter.cs",
-              "RelativeToolTip": "LiveStream.APPLICATION\\DTOs\\SourceConverter.cs",
-              "ViewState": "AgIAABwAAAAAAAAAAAAcwDMAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-19T07:12:35.231Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "MediaMtxService.cs",
               "DocumentMoniker": "D:\\LiveStream\\LiveStream\\LiveStream.APPLICATION\\Service\\MediaMtxService.cs",
               "RelativeDocumentMoniker": "LiveStream.APPLICATION\\Service\\MediaMtxService.cs",
               "ToolTip": "D:\\LiveStream\\LiveStream\\LiveStream.APPLICATION\\Service\\MediaMtxService.cs",
               "RelativeToolTip": "LiveStream.APPLICATION\\Service\\MediaMtxService.cs",
-              "ViewState": "AgIAAIkAAAAAAAAAAAAswKAAAAAcAAAAAAAAAA==",
+              "ViewState": "AgIAAHQAAAAAAAAAAAAswIQAAABXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-18T12:35:34.511Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "IMediaMtxService.cs",
-              "DocumentMoniker": "D:\\LiveStream\\LiveStream\\LiveStream.APPLICATION\\Interfaces\\IMediaMtxService.cs",
-              "RelativeDocumentMoniker": "LiveStream.APPLICATION\\Interfaces\\IMediaMtxService.cs",
-              "ToolTip": "D:\\LiveStream\\LiveStream\\LiveStream.APPLICATION\\Interfaces\\IMediaMtxService.cs",
-              "RelativeToolTip": "LiveStream.APPLICATION\\Interfaces\\IMediaMtxService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-18T12:35:09.709Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "MediaMtxPathListResponse.cs",
-              "DocumentMoniker": "D:\\LiveStream\\LiveStream\\LiveStream.APPLICATION\\DTOs\\MediaMtxPathListResponse.cs",
-              "RelativeDocumentMoniker": "LiveStream.APPLICATION\\DTOs\\MediaMtxPathListResponse.cs",
-              "ToolTip": "D:\\LiveStream\\LiveStream\\LiveStream.APPLICATION\\DTOs\\MediaMtxPathListResponse.cs",
-              "RelativeToolTip": "LiveStream.APPLICATION\\DTOs\\MediaMtxPathListResponse.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAwAAAA8AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-18T12:34:46.098Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "MediaMtxPathItem.cs",
-              "DocumentMoniker": "D:\\LiveStream\\LiveStream\\LiveStream.APPLICATION\\DTOs\\MediaMtxPathItem.cs",
-              "RelativeDocumentMoniker": "LiveStream.APPLICATION\\DTOs\\MediaMtxPathItem.cs",
-              "ToolTip": "D:\\LiveStream\\LiveStream\\LiveStream.APPLICATION\\DTOs\\MediaMtxPathItem.cs",
-              "RelativeToolTip": "LiveStream.APPLICATION\\DTOs\\MediaMtxPathItem.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAAAwAAAAtAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-18T12:34:18.545Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "MediaMTXPath.cs",
-              "DocumentMoniker": "D:\\LiveStream\\LiveStream\\LiveStream.DOMAIN\\MediaMTX\\MediaMTXPath.cs",
-              "RelativeDocumentMoniker": "LiveStream.DOMAIN\\MediaMTX\\MediaMTXPath.cs",
-              "ToolTip": "D:\\LiveStream\\LiveStream\\LiveStream.DOMAIN\\MediaMTX\\MediaMTXPath.cs",
-              "RelativeToolTip": "LiveStream.DOMAIN\\MediaMTX\\MediaMTXPath.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-18T12:33:29.948Z"
             }
           ]
         }

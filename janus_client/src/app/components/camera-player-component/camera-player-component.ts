@@ -7,7 +7,7 @@ import Hls from 'hls.js';
 @Component({
   selector: 'app-camera-player',
   standalone: true,
-  imports: [NgIf, NgFor, FormsModule], // ✅ ضيف FormsModule هنا
+  imports: [NgIf,  FormsModule], // ✅ ضيف FormsModule هنا
   templateUrl: './camera-player-component.html',
   styleUrls: ['./camera-player-component.css']
 })

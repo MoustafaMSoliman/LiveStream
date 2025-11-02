@@ -1,0 +1,34 @@
+services:
+#  coturn:
+#    build: ./coturn
+#    container_name: 3i-vision-ice-server
+#    restart: unless-stopped
+#    network_mode: host
+#    ports:
+#      - "3478:3478"
+#      - "3478:3478/udp"
+#      - "5349:5349"
+#      - "49152-65535:49152-65535/udp"
+#    environment:
+#      - TURN_EXTERNAL_IP=62.241.148.115
+  
+  mediamtx:
+    #image: bluenviron/mediamtx:1.23.1
+    build: 
+       context: .
+       dockerfile: Dockerfile
+       platforms: ["linux/amd64"]
+    container_name: smediamtx
+    restart: unless-stopped
+    volumes:
+      - ./mediamtx.yml:/mediamtx.yml  # Mount custom config file
+      - ./frames:/app/frames
+    #command: ["/mediamtx.yml"]        # Explicitly specify config
+    ports:                            # نكشف البورتات بدل network_mode: host
+      - "8554:8554"     # RTSP
+      - "1935:1935"     # RTMP
+      - "8888:8888"     # HLS
+      - "8889:8889"     # WebRTC HTTP
+      - "8189:8189/udp" # WebRTC ICE/UDP
+      - "8890:8890/udp" # SRT
+      - "9997:9997"     # API

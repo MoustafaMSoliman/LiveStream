@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("LiveStream.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f497b29d819ebaac884ce8895ada2f6ae4e3e43d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+26f3b5e7911660cdf52b025b0b8aad7722045b16")]
 [assembly: System.Reflection.AssemblyProductAttribute("LiveStream.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("LiveStream.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

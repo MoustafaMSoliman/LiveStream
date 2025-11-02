@@ -1,11 +1,16 @@
 ﻿using LiveStream.APPLICATION.DTOs;
 using LiveStream.APPLICATION.Interfaces;
+using LiveStream.DOMAIN;
 using LiveStream.DOMAIN.MediaMTX;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
+using System.Net.Http;
+using System.Net.Http.Json;
+using System.Security.Claims;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
@@ -17,14 +22,16 @@ namespace LiveStream.APPLICATION.Service
         private readonly HttpClient _httpClient;
         private readonly IConfiguration _configuration;
         private readonly ILogger<MediaMtxService> _logger;
+        private readonly StreamTokenService _streamTokenService;
 
-        public MediaMtxService(HttpClient httpClient, IConfiguration configuration, ILogger<MediaMtxService> logger)
+        public MediaMtxService(HttpClient httpClient, IConfiguration configuration, ILogger<MediaMtxService> logger, StreamTokenService streamTokenService)
         {
             _httpClient = httpClient;
             _configuration = configuration;
             _logger = logger;
+            _streamTokenService = streamTokenService;
 
-            
+
             var mediaMtxUrl = _configuration["MediaMtx:BaseUrl"] ?? "http://localhost:9997";
             _httpClient.BaseAddress = new Uri(mediaMtxUrl);
         }
@@ -47,6 +54,7 @@ namespace LiveStream.APPLICATION.Service
                 if (response.IsSuccessStatusCode)
                 {
                     _logger.LogInformation("Camera {CameraName} added successfully", cameraName);
+                    StartGStreamerFrameExtractor(cameraName);
                     return true;
                 }
                 else
@@ -61,6 +69,115 @@ namespace LiveStream.APPLICATION.Service
             {
                 _logger.LogError(ex, "Error adding camera {CameraName}", cameraName);
                 return false;
+            }
+        }
+        /*
+        private void StartGStreamerFrameExtractor(string cameraName)
+        {
+            try
+            {
+                // The MediaMTX stream URL for playback (RTSP/HLS)
+                string streamUrl = $"rtsp://localhost:8554/{cameraName}";
+
+                // Save frames as /app/frames/camName_frame001.jpg
+                string outputPath = $"/app/frames/{cameraName}_frame_%03d.jpg";
+
+                // Capture 1 frame per second
+                string command = $"gst-launch-1.0 rtspsrc location={streamUrl} latency=0 ! " +
+                                 "decodebin ! videorate ! video/x-raw,framerate=1/1 ! " +
+                                 "jpegenc ! multifilesink location=" + outputPath;
+
+                var process = new Process
+                {
+                    StartInfo = new ProcessStartInfo
+                    {
+                        FileName = "/bin/bash",
+                        Arguments = $"-c \"{command}\"",
+                        RedirectStandardOutput = true,
+                        RedirectStandardError = true,
+                        UseShellExecute = false,
+                        CreateNoWindow = true
+                    }
+                };
+
+                process.Start();
+                _logger.LogInformation("Started GStreamer for {CameraName}, outputting to {Path}", cameraName, outputPath);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Failed to start GStreamer for {CameraName}", cameraName);
+            }
+        }
+        */
+        private async Task StartGStreamerFrameExtractor(string cameraName)
+        {
+            try
+            {
+                
+                var tokenRequest = new { CameraId = cameraName };
+                var response = await _httpClient.PostAsJsonAsync("http://localhost:5046/api/stream/token", tokenRequest);
+
+                response.EnsureSuccessStatusCode();
+
+                var tokenResponse = await response.Content.ReadFromJsonAsync<StreamInfo>();
+                string token = tokenResponse.AccessToken;
+
+
+
+                
+                // ✅ Container name (must match your running MediaMTX container)
+                string containerName = "smediamtx";
+
+                // ✅ Stream URL (MediaMTX RTSP)
+                //string streamUrl = $"rtsp://localhost:8554/{cameraName}";
+                string streamUrl = $"rtsp://localhost:8554/{cameraName}?token={token}";
+            
+                // ✅ Output path inside container
+                string outputPath = $"/app/frames/{cameraName}_frame_%03d.jpg";
+
+                // ✅ GStreamer pipeline
+                string gstCommand =
+                    $"gst-launch-1.0 rtspsrc location={streamUrl} latency=0 ! " +
+                    "decodebin ! videorate ! video/x-raw,framerate=1/1 ! " +
+                    $"jpegenc ! multifilesink location={outputPath}";
+
+                // ✅ Docker exec command to run inside container
+                string dockerCommand = $"docker exec {containerName} sh -c \"{gstCommand}\"";
+
+                var process = new Process
+                {
+                    StartInfo = new ProcessStartInfo
+                    {
+                        FileName = "cmd.exe",
+                        Arguments = $"/C {dockerCommand}",
+                        RedirectStandardOutput = true,
+                        RedirectStandardError = true,
+                        UseShellExecute = false,
+                        CreateNoWindow = true
+                    }
+                };
+
+                process.OutputDataReceived += (sender, e) =>
+                {
+                    if (!string.IsNullOrEmpty(e.Data))
+                        _logger.LogInformation("[GStreamer Output] {Output}", e.Data);
+                };
+
+                process.ErrorDataReceived += (sender, e) =>
+                {
+                    if (!string.IsNullOrEmpty(e.Data))
+                        _logger.LogWarning("[GStreamer Error] {Error}", e.Data);
+                };
+
+                process.Start();
+                process.BeginOutputReadLine();
+                process.BeginErrorReadLine();
+
+                _logger.LogInformation("🚀 Started GStreamer inside container '{Container}' for {CameraName}", containerName, cameraName);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "❌ Failed to start GStreamer for {CameraName}", cameraName);
             }
         }
 

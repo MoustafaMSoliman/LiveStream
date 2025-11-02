@@ -1,0 +1,65 @@
+🧠 MediaMTX “Dynamic Paths” reality
+-----------------------------------
+
+When you add new paths dynamically via the API (e.g. POST /v3/config/paths/add),
+MediaMTX does not store them on disk — they live only in memory (RAM).
+
+That means:
+
+  - They are not saved to /mediamtx.yml.
+
+  - They are not written to any other file in the container.
+
+  - When you restart the container, they are lost.
+
+  - You cannot vim them because there is literally no file for them — they exist as Go structs in MediaMTX’s process memory.
+  
+🎯 Your Goal
+------------
+
+You want MediaMTX to:
+
+ - Take a specific path (say /cam1),
+
+ - Extract frames from that live stream,
+
+ - Save them as JPG images at a defined frames per second (FPS) rate,
+
+So the AI team can pick them up (e.g., for object detection or motion analysis).
+
+🧩 How MediaMTX Can Do It
+-------------------------
+
+MediaMTX itself doesn’t directly save frames —
+but it can execute an external command whenever a stream is active using the runOnReady (or runOnPublish) feature.
+
+That means we can attach FFmpeg or GStreamer as a sub-process to dump frames automatically.
+
+paths:
+  cam1:
+    source: rtsp://170.93.143.139/rtplive/470011e600ef003a004ee33696235daa
+    sourceOnDemand: yes
+    runOnReady: ffmpeg -i rtsp://127.0.0.1:8554/cam1 -vf fps=1 -q:v 2 /frames/cam1/frame_%06d.jpg
+
+| Task                | Method                             |
+| ------------------- | ---------------------------------- |
+| Extract frames      | `runOnReady` + FFmpeg              |
+| Control FPS         | Adjust `-vf fps=X`                 |
+| Save path           | e.g. `/frames/cam1/frame_%06d.jpg` |
+| Persistence         | Mount `/frames` to host            |
+| View dynamic config | `GET /v3/config/paths/list`        |
+
+
+GStreamer
+---------
+ rtspsrc → decodebin → videoconvert → videoscale → capsfilter (fps) → jpegenc → appsink → Python code → send to AI API
+ 
+ This means:
+
+   - GStreamer decodes the RTSP stream
+
+   - Converts video to raw frames
+
+   - Encodes to JPEGs (or raw RGB)
+
+   - Delivers each frame to your Python code via appsink
